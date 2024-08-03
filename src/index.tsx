@@ -4,6 +4,23 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { storyblokInit, apiPlugin } from '@storyblok/react';
+// import Page from './components/Page';
+import Heading from 'components/atoms/Heading';
+// import Grid from './components/Grid';
+// import Feature from './components/Feature';
+
+storyblokInit({
+  accessToken: 'Yg0RlkdoBtQa0vGTYexlmwtt',
+  use: [apiPlugin],
+  components: {
+    heading: Heading,
+    // teaser: Teaser,
+    // grid: Grid,
+    // feature: Feature,
+  },
+});
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
