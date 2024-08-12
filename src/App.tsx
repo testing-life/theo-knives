@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div data-theme="default">
-      <StoryblokComponent blok={story.content} />;
+      <StoryblokComponent blok={story.content} />
     </div>
   );
 }
