@@ -1,7 +1,8 @@
 :root {
+  --light-weight: 300;
   --default-weight: 400;
   --semibold-weight: 600;
-  --extrabold-weight: 800;
+  --bold-weight: 700;
   /* --ratio: 1.5;
   --font-size-0: 1rem;
   --font-size-1: calc(var(--font-size-0) * var(--ratio));
@@ -17,4 +18,5 @@ html {
   font-weight: var(--default-weight);
   font-style: normal;
   font-variation-settings: "wdth" 100;
+  font-size: 62.5%;
 }

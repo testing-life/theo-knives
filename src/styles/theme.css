@@ -1,13 +1,38 @@
 :root:has([data-theme="default"]) {
-  --page-background: var(--butternut-squash);
-  --text-colour: var(--exquisite-eggplant);
-  --button-bg: var(--natural-choice);
-  --button-colour: var(--dark-exquisite-eggplant);
-  --button-interacted-colour: var(--june-bud);
-  --button-interacted-bg: var(--light-exquisite-eggplant);
-  --link-interacted-colour: var(--light-exquisite-eggplant);
-  --link-interacted-bg: var(--june-bud);
+  --page-background: rgba(var(--butternut-squash), 0.5);
+  --text-colour: rgba(var(--exquisite-eggplant), 1);
+  --button-bg: rgba(var(--dark-exquisite-eggplant), 1);
+  --button-colour: rgba(var(--natural-choice), 1);
+  --button-interacted-colour: rgba(var(--june-bud), 1);
+  --button-interacted-bg: rgba(var(--light-exquisite-eggplant), 1);
+  --link-interacted-colour: rgba(var(--light-exquisite-eggplant), 1);
+  --link-interacted-bg: rgba(var(--june-bud), 1);
   --section-bg: rgba(var(--terra-pin), 0.32);
   --gallery-bg: rgba(var(--light-exquisite-eggplant), 0.68);
-  --drawer-bg: var(--butternut-squash);
+  --drawer-bg: rgba(var(--butternut-squash), 1);
+  --border-radius: 8px;
+}
+
+html {
+  height: 100vh;
+  background-image: url("assets/mobileBg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (width > 960px) {
+  html {
+    background-image: url("assets/tabletBg.webp");
+  }
+}
+
+@media (width > 1140px) {
+  html {
+    background-image: url("assets/desktopBg.webp");
+  }
+}
+
+body {
+  min-height: 100%;
+  background-color: var(--page-background);
 }

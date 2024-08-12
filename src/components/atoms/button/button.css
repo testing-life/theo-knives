@@ -1,0 +1,21 @@
+.theo-button {
+  border-radius: var(--border-radius);
+  color: var(--button-colour);
+  background: var(--button-bg);
+  inline-size: 100%;
+  font-size: 1.6rem;
+  font-weight: var(--semibold-weight);
+}
+
+.theo-button:hover,
+.theo-button:active {
+  color: var(--button-interacted-colour);
+  background: var(--button-interacted-bg);
+}
+
+@media (width > 960px) {
+  .theo-button {
+    inline-size: auto;
+    padding: 1rem 2.5rem;
+  }
+}
