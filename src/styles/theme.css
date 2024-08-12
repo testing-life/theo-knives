@@ -1,0 +1,13 @@
+:root:has([data-theme="default"]) {
+  --page-background: var(--butternut-squash);
+  --text-colour: var(--exquisite-eggplant);
+  --button-bg: var(--natural-choice);
+  --button-colour: var(--dark-exquisite-eggplant);
+  --button-interacted-colour: var(--june-bud);
+  --button-interacted-bg: var(--light-exquisite-eggplant);
+  --link-interacted-colour: var(--light-exquisite-eggplant);
+  --link-interacted-bg: var(--june-bud);
+  --section-bg: rgba(var(--terra-pin), 0.32);
+  --gallery-bg: rgba(var(--light-exquisite-eggplant), 0.68);
+  --drawer-bg: var(--butternut-squash);
+}
