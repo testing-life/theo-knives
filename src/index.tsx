@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { storyblokInit, apiPlugin } from '@storyblok/react';
 import Page from 'components/template/Page';
 import Heading from 'components/atoms/Heading';
+import Button from 'components/atoms/Button/Button';
 // import Grid from './components/Grid';
 // import Feature from './components/Feature';
 
@@ -16,6 +17,7 @@ storyblokInit({
   components: {
     heading: Heading,
     page: Page,
+    button: Button,
     // teaser: Teaser,
     // grid: Grid,
     // feature: Feature,
