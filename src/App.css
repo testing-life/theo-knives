@@ -3,7 +3,7 @@ html {
   background-color: red;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  block-size: 100vh;
 }
 
 @media (width > 1194px) {
@@ -19,5 +19,5 @@ html {
 }
 
 body {
-  min-height: 100%;
+  min-block-size: 100%;
 }

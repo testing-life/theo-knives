@@ -1,0 +1,20 @@
+.theo-main-nav {
+  background-color: var(--drawer-bg);
+  block-size: 100%;
+  position: absolute;
+  inset-inline-end: 0;
+  inline-size: 75%;
+  z-index: 9;
+  padding: 1rem;
+}
+
+@media (width > 960px) {
+  .theo-main-nav {
+    background-color: transparent;
+    position: relative;
+  }
+}
+
+.theo-main-nav .pure-menu-item:not(:last-child) {
+  margin-block-end: 1rem;
+}
