@@ -9,6 +9,7 @@ import Page from "components/template/Page";
 import Heading from "components/atoms/Heading";
 import Button from "components/atoms/button/button";
 import Link from "components/atoms/link/link";
+import MainNav from "components/molecules/mainNav/MainNav";
 // import Grid from './components/Grid';
 // import Feature from './components/Feature';
 
@@ -20,6 +21,7 @@ storyblokInit({
     page: Page,
     button: Button,
     link: Link,
+    "main-nav": MainNav,
     // teaser: Teaser,
     // grid: Grid,
     // feature: Feature,
