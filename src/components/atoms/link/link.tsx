@@ -1,7 +1,22 @@
-import React from "react";
+import React, { FC } from "react";
+import { storyblokEditable } from "@storyblok/react";
+import "./link.css";
 
-const Link = () => {
-  return <a>Link</a>;
+interface Props {
+  blok: any;
+}
+
+const Link: FC<Props> = ({ blok }) => {
+  return (
+    <a
+      className="theo-link"
+      rel="noopener"
+      {...storyblokEditable(blok)}
+      href={blok.whereTo}
+    >
+      {blok.label}
+    </a>
+  );
 };
 
 export default Link;

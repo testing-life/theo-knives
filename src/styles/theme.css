@@ -5,6 +5,7 @@
   --button-colour: rgba(var(--natural-choice), 1);
   --button-interacted-colour: rgba(var(--june-bud), 1);
   --button-interacted-bg: rgba(var(--light-exquisite-eggplant), 1);
+  --link-colour: var(--text-colour);
   --link-interacted-colour: rgba(var(--light-exquisite-eggplant), 1);
   --link-interacted-bg: rgba(var(--june-bud), 1);
   --section-bg: rgba(var(--terra-pin), 0.32);
@@ -35,4 +36,5 @@ html {
 body {
   min-height: 100%;
   background-color: var(--page-background);
+  color: var(--text-colour);
 }

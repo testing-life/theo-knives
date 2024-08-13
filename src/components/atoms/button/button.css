@@ -8,7 +8,7 @@
 }
 
 .theo-button:hover,
-.theo-button:active {
+.theo-button:focus {
   color: var(--button-interacted-colour);
   background: var(--button-interacted-bg);
 }
