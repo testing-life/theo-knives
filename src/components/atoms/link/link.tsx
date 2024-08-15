@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Link: FC<Props> = ({ blok }) => {
-  console.log("blok", blok);
   return (
     <a
       className="theo-link"

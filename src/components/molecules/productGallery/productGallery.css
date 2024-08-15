@@ -1,0 +1,19 @@
+.theo-product-gallery {
+  background-color: var(--drawer-bg);
+  block-size: 100%;
+  position: fixed;
+  inset-inline-end: 0;
+  inline-size: 75%;
+  z-index: 9;
+  padding: 1rem;
+  inset-block-start: 0;
+  transition: transform 0.25s ease-out;
+  transform: translate3d(0%, 0px, 0px);
+}
+
+@media (width > 960px) {
+  .theo-product-gallery {
+    background-color: transparent;
+    position: relative;
+  }
+}
