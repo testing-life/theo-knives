@@ -1,0 +1,27 @@
+.product {
+  background: var(--product-bg);
+  padding: 1rem;
+}
+
+.product__header {
+  margin-block-end: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product__name {
+  font-size: 1.4rem;
+  font-weight: var(--bold-weight);
+  text-transform: uppercase;
+}
+
+.product__model {
+  font-size: 1.2rem;
+  color: var(--model-colour);
+}
+
+.product__description {
+  font-size: 1.2rem;
+  margin-block-end: 1rem;
+}

@@ -10,6 +10,8 @@
   --link-interacted-bg: rgba(var(--june-bud), 1);
   --section-bg: rgba(var(--terra-pin), 0.32);
   --gallery-bg: rgba(var(--light-exquisite-eggplant), 0.68);
+  --product-bg: rgba(var(--aurora-romulus), 0.4);
+  --model-colour: rgba(var(--dark-exquisite-eggplant), 1);
   --drawer-bg: rgba(var(--butternut-squash), 1);
   --border-radius: 8px;
 }
