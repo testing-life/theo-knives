@@ -15,6 +15,13 @@
   }
 }
 
-.theo-main-nav .pure-menu-item:not(:last-child) {
+.theo-main-nav:not(.pure-menu-horizontal) .pure-menu-item:not(:last-child) {
   margin-block-end: 1rem;
+}
+
+.is-hidden {
+  visibility: hidden;
+  position: fixed;
+  inset: 0px auto 0px 0px;
+  transform: translate3d(-100%, 0px, 0px);
 }

@@ -1,21 +1,16 @@
 .theo-icon-button {
-  border-radius: var(--border-radius);
   color: var(--button-colour);
   background: var(--button-bg);
-  inline-size: 100%;
-  font-size: 1.6rem;
-  font-weight: var(--semibold-weight);
+  inline-size: auto;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  padding: 1.22rem;
 }
 
 .theo-icon-button:hover,
-.theo-button:focus {
+.theo-icon-button:focus {
   color: var(--button-interacted-colour);
   background: var(--button-interacted-bg);
-}
-
-@media (width > 960px) {
-  .theo-icon-button {
-    inline-size: auto;
-    padding: 1rem 2.5rem;
-  }
+  cursor: pointer;
 }
