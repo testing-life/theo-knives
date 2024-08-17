@@ -11,7 +11,7 @@ const Product: FC<Props> = ({ blok }) => {
   console.log('blok', blok);
   return (
     <article {...storyblokEditable(blok)} className='product'>
-      <ProductGallery images={blok.images[0]} />
+      <ProductGallery images={blok.images} />
       <header className='product__header'>
         <h2 className='product__name'>{blok.name}</h2>
         <span className='product__model'>{blok.model}</span>
