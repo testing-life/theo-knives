@@ -2,14 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-}
-
-@media (width > 960px) {
-  .theo-product-gallery {
-    background-color: transparent;
-    position: relative;
-  }
+  block-size: 100%;
 }
 
 .theo-product-gallery__list {
@@ -27,9 +20,9 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  width: 100%;
-  height: 200px;
-  margin-right: 0px;
+  inline-size: 100%;
+  block-size: 200px;
+  margin-block-end: 0px;
   box-sizing: border-box;
   transform-origin: center center;
   transform: scale(1);
@@ -37,6 +30,35 @@
   overflow: hidden;
 }
 
+@media (width > 758px) {
+  .theo-product-gallery__item {
+    block-size: 300px;
+  }
+}
+
 .theo-product-gallery__image {
-  width: 100%;
+  inline-size: 100%;
+}
+
+@media (width > 960px) {
+  .theo-product-gallery {
+    background-color: transparent;
+    position: relative;
+  }
+
+  .theo-product-gallery__list {
+    flex-wrap: wrap;
+    gap: 2px;
+    inline-size: 100%;
+  }
+
+  .theo-product-gallery__item {
+    flex: 1 calc(50% - 4px);
+  }
+
+  .theo-product-gallery__image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
 }
