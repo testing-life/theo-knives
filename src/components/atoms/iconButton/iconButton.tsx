@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, ComponentPropsWithoutRef } from 'react';
+import React, { FC, ReactNode } from 'react';
 import './iconButton.css';
 
 interface Props {
@@ -8,6 +8,7 @@ interface Props {
   ariaExpanded?: boolean;
   ariaPopup?: boolean;
   needsAria?: boolean;
+  disabled?: boolean;
 }
 
 const IconButton: FC<Props> = ({
@@ -17,9 +18,11 @@ const IconButton: FC<Props> = ({
   ariaExpanded,
   ariaPopup,
   needsAria,
+  disabled,
 }) => {
   return (
     <button
+      disabled={disabled}
       type='button'
       onClick={clickHandler}
       {...(needsAria && { 'aria-controls': ariaControls })}

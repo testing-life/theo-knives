@@ -1,4 +1,4 @@
-:root:has([data-theme="default"]) {
+:root:has([data-theme='default']) {
   --page-background: rgba(var(--butternut-squash), 0.5);
   --text-colour: rgba(var(--exquisite-eggplant), 1);
   --button-bg: rgba(var(--dark-exquisite-eggplant), 1);
@@ -13,25 +13,27 @@
   --product-bg: rgba(var(--aurora-romulus), 0.4);
   --model-colour: rgba(var(--dark-exquisite-eggplant), 1);
   --drawer-bg: rgba(var(--butternut-squash), 1);
+  --disabled-btn-bg: rgba(var(--gunk-gaul), 1);
+  --disabled-btn-colour: rgba(var(--grave-grit), 1);
   --border-radius: 8px;
 }
 
 html {
   block-size: 100vh;
-  background-image: url("assets/mobileBg.webp");
+  background-image: url('assets/mobileBg.webp');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 @media (width > 960px) {
   html {
-    background-image: url("assets/tabletBg.webp");
+    background-image: url('assets/tabletBg.webp');
   }
 }
 
 @media (width > 1140px) {
   html {
-    background-image: url("assets/desktopBg.webp");
+    background-image: url('assets/desktopBg.webp');
   }
 }
 

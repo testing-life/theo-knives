@@ -8,7 +8,6 @@ interface Props {
 }
 
 const Product: FC<Props> = ({ blok }) => {
-  console.log('blok', blok);
   return (
     <article {...storyblokEditable(blok)} className='theo-product'>
       <ProductGallery images={blok.images} />

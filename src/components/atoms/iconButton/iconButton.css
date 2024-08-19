@@ -14,3 +14,10 @@
   background: var(--button-interacted-bg);
   cursor: pointer;
 }
+
+.theo-icon-button[disabled] {
+  background: var(--disabled-btn-bg);
+  color: var(--disabled-btn-colour);
+  cursor: default;
+  opacity: 0.7;
+}

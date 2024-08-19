@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   block-size: 100%;
+  position: relative;
 }
 
 .theo-product-gallery__list {
@@ -64,4 +65,17 @@
 }
 
 .theo-product-gallery__controls {
+  display: flex;
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: flex-end;
+}
+
+.theo-product-gallery__counter {
+  font-weight: var(--bold-weight);
+  font-size: 1.2rem;
 }

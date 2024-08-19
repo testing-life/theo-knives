@@ -13,6 +13,13 @@ const ProductGallery: FC<Props> = ({ images }) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const sliderRef = useRef<HTMLUListElement>(null);
 
+  const isPrevDisabled: boolean = slideIndex === 0;
+
+  const isNextDisabled: boolean =
+    sliderRef.current && slideIndex === sliderRef.current!.children.length - 1
+      ? true
+      : false;
+
   const SlideTo = (index: number) => {
     if (sliderRef.current) {
       sliderRef.current.scrollTo({
@@ -24,17 +31,25 @@ const ProductGallery: FC<Props> = ({ images }) => {
   };
 
   const slidePrev = () => {
-    SlideTo(slideIndex - 1);
+    if (slideIndex > 0) {
+      SlideTo(slideIndex - 1);
+    }
   };
+
   const slideNext = () => {
-    SlideTo(slideIndex + 1);
+    if (
+      sliderRef.current &&
+      slideIndex < sliderRef.current.children.length - 1
+    ) {
+      SlideTo(slideIndex + 1);
+    }
   };
 
   return (
     <div className='theo-product-gallery'>
       <ul className='theo-product-gallery__list' ref={sliderRef}>
         {images?.map?.((image) => (
-          <li className='theo-product-gallery__item'>
+          <li className='theo-product-gallery__item' key={image.id}>
             <img
               src={image.filename}
               className='theo-product-gallery__image'
@@ -45,13 +60,13 @@ const ProductGallery: FC<Props> = ({ images }) => {
       </ul>
       {!forTablet ? (
         <div className='theo-product-gallery__controls'>
-          <IconButton clickHandler={slidePrev}>
+          <IconButton disabled={isPrevDisabled} clickHandler={slidePrev}>
             <Prev />
           </IconButton>
-          <span>{`${slideIndex + 1} / ${
-            sliderRef.current?.children.length
-          }`}</span>
-          <IconButton clickHandler={slideNext}>
+          <span className='theo-product-gallery__counter'>{`${
+            slideIndex + 1
+          } / ${images.length}`}</span>
+          <IconButton disabled={isNextDisabled} clickHandler={slideNext}>
             <Next />
           </IconButton>
         </div>
