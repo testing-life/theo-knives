@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Model: FC<Props> = ({ blok }) => {
-  console.log('blok', blok);
   return (
     <article {...storyblokEditable(blok)} className='theo-model'>
       <figure className='theo-model__figure'>
