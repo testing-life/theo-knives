@@ -1,0 +1,10 @@
+.theo-page {
+  inline-size: 100%;
+}
+
+@media (width > 1194px) {
+  .theo-page {
+    max-inline-size: 102.4rem;
+    margin: 0 auto;
+  }
+}
