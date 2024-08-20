@@ -35,11 +35,9 @@
 }
 
 .theo-product__model {
-  font-size: 1.2rem;
   color: var(--model-colour);
 }
 
 .theo-product__description {
-  font-size: 1.2rem;
   margin-block-end: 1rem;
 }

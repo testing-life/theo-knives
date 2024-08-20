@@ -1,0 +1,24 @@
+.theo-model {
+  text-align: center;
+  background: var(--product-bg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+}
+
+.theo-model__description {
+  text-align: start;
+}
+
+.theo-model__heading {
+  text-transform: uppercase;
+}
+
+.theo-model__figure {
+  margin: -1rem;
+}
+
+.theo-model__cta {
+  margin-block-start: auto;
+}

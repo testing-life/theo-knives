@@ -13,10 +13,20 @@
 }
 
 html {
-  font-family: "Georama", sans-serif;
+  font-family: 'Georama', sans-serif;
   font-optical-sizing: auto;
   font-weight: var(--default-weight);
   font-style: normal;
-  font-variation-settings: "wdth" 100;
+  font-variation-settings: 'wdth' 100;
   font-size: 62.5%;
+}
+
+body {
+  font-size: 1.2rem;
+}
+
+@media (width > 758px) {
+  body {
+    font-size: 1.4rem;
+  }
 }
