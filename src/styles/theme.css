@@ -16,6 +16,14 @@
   --disabled-btn-bg: rgba(var(--gunk-gaul), 1);
   --disabled-btn-colour: rgba(var(--grave-grit), 1);
   --border-radius: 8px;
+  --separator-bg: linear-gradient(
+    to left,
+    rgba(var(--abiding-answer), 0) 0%,
+    rgba(var(--abiding-answer), 1) 20%,
+    rgba(var(--exquisite-eggplant), 1) 50%,
+    rgba(var(--abiding-answer), 1) 80%,
+    rgba(var(--abiding-answer), 0) 100%
+  );
 }
 
 html {

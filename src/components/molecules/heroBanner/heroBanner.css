@@ -1,0 +1,39 @@
+.theo-hero {
+  padding: 1rem;
+  position: relative;
+  border-block-start-width: 0.4rem;
+  border-block-end-width: 0.4rem;
+  border-image-source: var(--separator-bg);
+  border-image-slice: 1;
+  border-style: solid;
+}
+
+@media (width > 1140px) {
+  .theo-hero {
+    padding: 2rem;
+  }
+}
+
+.theo-hero__heading {
+  font-size: 2.2rem;
+  font-weight: var(--semibold-weight);
+  position: absolute;
+  inset-block-end: 2rem;
+}
+
+@media (width > 700px) {
+  .theo-hero__heading {
+    inset-block-end: 10rem;
+  }
+}
+
+@media (width > 1140px) {
+  .theo-hero__heading {
+    font-size: 3.2rem;
+    inset-block-end: 15rem;
+  }
+}
+
+.theo-hero__figure {
+  margin: -2rem;
+}

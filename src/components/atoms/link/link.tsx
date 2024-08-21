@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { storyblokEditable } from "@storyblok/react";
-import "./link.css";
+import React, { FC } from 'react';
+import { storyblokEditable } from '@storyblok/react';
+import './link.css';
 
 interface Props {
   blok: any;
@@ -9,10 +9,10 @@ interface Props {
 const Link: FC<Props> = ({ blok }) => {
   return (
     <a
-      className="theo-link"
-      rel="noopener"
+      className='theo-link'
+      rel='noopener'
       {...storyblokEditable(blok)}
-      href={blok.whereTo}
+      href={blok.whereTo.cached_url}
     >
       {blok.label}
     </a>
