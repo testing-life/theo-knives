@@ -9,7 +9,7 @@ interface Props {
 const Link: FC<Props> = ({ blok }) => {
   return (
     <a
-      className='theo-link'
+      className={`${blok.asButton ? 'pure-button theo-button' : 'theo-link'}`}
       rel='noopener'
       {...storyblokEditable(blok)}
       href={blok.whereTo.cached_url}

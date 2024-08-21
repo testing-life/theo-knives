@@ -16,6 +16,7 @@
   --disabled-btn-bg: rgba(var(--gunk-gaul), 1);
   --disabled-btn-colour: rgba(var(--grave-grit), 1);
   --border-radius: 8px;
+  --text-shadow: rgba(var(--abject-abbyss), 1);
   --separator-bg: linear-gradient(
     to left,
     rgba(var(--abiding-answer), 0) 0%,

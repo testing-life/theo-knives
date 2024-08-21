@@ -14,7 +14,6 @@ const HeroBanner: FC<Props> = ({ blok }) => {
       <figure className='theo-hero__figure'>
         <img className='pure-img' src={Hero} alt='' />
       </figure>
-      <>{console.log('first', blok.cta)}</>
       <Link blok={blok.cta[0]} />
     </div>
   );

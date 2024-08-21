@@ -1,11 +1,11 @@
 .theo-hero {
-  padding: 1rem;
   position: relative;
   border-block-start-width: 0.4rem;
   border-block-end-width: 0.4rem;
   border-image-source: var(--separator-bg);
   border-image-slice: 1;
   border-style: solid;
+  text-align: center;
 }
 
 @media (width > 1140px) {
@@ -18,12 +18,14 @@
   font-size: 2.2rem;
   font-weight: var(--semibold-weight);
   position: absolute;
-  inset-block-end: 2rem;
+  text-shadow: 0.2rem 0.2rem var(--text-shadow);
+  inset-block-end: 12rem;
+  margin: 0;
 }
 
 @media (width > 700px) {
   .theo-hero__heading {
-    inset-block-end: 10rem;
+    inset-block-end: 15rem;
   }
 }
 
@@ -34,6 +36,9 @@
   }
 }
 
-.theo-hero__figure {
-  margin: -2rem;
+@media (width > 700px) {
+  .theo-hero .theo-button {
+    position: absolute;
+    inset-block-end: 6rem;
+  }
 }
