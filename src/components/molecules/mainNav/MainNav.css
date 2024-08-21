@@ -15,6 +15,11 @@
   .theo-main-nav {
     background-color: transparent;
     position: relative;
+    inline-size: 100%;
+    text-align: center;
+  }
+  .theo-main-nav .pure-menu-item:not(:last-child) {
+    margin-inline-end: 1rem;
   }
 }
 
@@ -32,4 +37,9 @@
   inset: 0px auto 0px 0px;
   transform: translate3d(140%, 0px, 0px);
   transition: transform 0.25s;
+}
+
+.theo-main-nav-wrapper {
+  justify-content: flex-end;
+  margin-block-end: 9rem;
 }

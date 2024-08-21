@@ -8,18 +8,12 @@
   text-align: center;
 }
 
-@media (width > 1140px) {
-  .theo-hero {
-    padding: 2rem;
-  }
-}
-
 .theo-hero__heading {
   font-size: 2.2rem;
   font-weight: var(--semibold-weight);
   position: absolute;
   text-shadow: 0.2rem 0.2rem var(--text-shadow);
-  inset-block-end: 12rem;
+  inset-block-end: 7rem;
   margin: 0;
 }
 
@@ -40,5 +34,6 @@
   .theo-hero .theo-button {
     position: absolute;
     inset-block-end: 6rem;
+    transform: translateX(-50%);
   }
 }

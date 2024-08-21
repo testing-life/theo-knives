@@ -1,11 +1,11 @@
-import React, { FC, useState } from "react";
-import { storyblokEditable } from "@storyblok/react";
-import Link from "components/atoms/link/link";
-import { forDesktop, forTablet } from "utils/breakpoints";
-import { ReactComponent as Menu } from "assets/icons/Menu.svg";
-import { ReactComponent as Close } from "assets/icons/X.svg";
-import "./MainNav.css";
-import IconButton from "components/atoms/iconButton/iconButton";
+import React, { FC, useState } from 'react';
+import { storyblokEditable } from '@storyblok/react';
+import Link from 'components/atoms/link/link';
+import { forDesktop, forTablet } from 'utils/breakpoints';
+import { ReactComponent as Menu } from 'assets/icons/Menu.svg';
+import { ReactComponent as Close } from 'assets/icons/X.svg';
+import './MainNav.css';
+import IconButton from 'components/atoms/iconButton/iconButton';
 
 interface Props {
   blok: any;
@@ -13,9 +13,10 @@ interface Props {
 
 const MainNav: FC<Props> = ({ blok }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const ariaId = "mainNav";
+
+  const ariaId = 'mainNav';
   return (
-    <div>
+    <div className='theo-main-nav-wrapper'>
       {!forTablet && (
         <IconButton
           needsAria
@@ -27,11 +28,11 @@ const MainNav: FC<Props> = ({ blok }) => {
         </IconButton>
       )}
       <nav
-        {...(!forTablet && { "aria-hidden": !isOpen })}
+        {...(!forTablet && { 'aria-hidden': !isOpen })}
         className={`pure-menu theo-main-nav  ${
-          forTablet ? "pure-menu-horizontal" : ""
+          forTablet ? 'pure-menu-horizontal' : ''
         }
-        ${!forTablet && !isOpen ? "is-hidden" : ""}`}
+        ${!forTablet && !isOpen ? 'is-hidden' : ''}`}
         {...storyblokEditable(blok)}
       >
         {!forTablet && (
@@ -46,11 +47,11 @@ const MainNav: FC<Props> = ({ blok }) => {
         )}
         <ul
           id={ariaId}
-          {...(!forTablet && { role: "menu" })}
-          className="pure-menu-list"
+          {...(!forTablet && { role: 'menu' })}
+          className='pure-menu-list'
         >
           {blok.links?.map((link: any) => (
-            <li key={link._uid} className="pure-menu-item">
+            <li key={link._uid} className='pure-menu-item'>
               <Link blok={link} />
             </li>
           ))}
