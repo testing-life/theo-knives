@@ -4,7 +4,7 @@
   inline-size: auto;
   border: none;
   border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   padding: 1.22rem;
 }
 

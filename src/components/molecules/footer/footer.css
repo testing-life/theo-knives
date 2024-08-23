@@ -1,22 +1,27 @@
 .theo-footer {
+  background-color: var(--page-background);
+  margin: 12rem -1rem -1rem -1rem;
 }
 
-.theo-footer a[href]:not(:has(.theo-icon-button)),
-.theo-footer a[tel]:not(:has(.theo-icon-button)) {
+.theo-footer [class^='pure-u-'] {
+  box-sizing: border-box;
+}
+
+.theo-footer a[href]:not(:is(.theo-icon-button)),
+.theo-footer a[tel]:not(:is(.theo-icon-button)) {
   display: inline-block;
-  font-weight: var(--light-weight);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--link-colour);
   text-decoration: none;
   position: relative;
   z-index: 1;
 }
 
-.theo-footer a[href]:after,
-.theo-footer a[tel]:after {
+.theo-footer a[href]:not(:is(.theo-icon-button)):after,
+.theo-footer a[tel]:not(:is(.theo-icon-button)):after {
   content: '';
   inline-size: 100%;
-  block-size: 0.2rem;
+  block-size: 0.1rem;
   display: block;
   position: absolute;
   inset-inline-start: 0;
@@ -26,29 +31,53 @@
   transition: height 0.15s, color 0.15s;
 }
 
-.theo-footer a[href]:hover,
-.theo-footer a[tel]:hover,
-.theo-footer a[href]:focus,
-.theo-footer a[tel]:focus {
+.theo-footer a[href]:not(:is(.theo-icon-button)):hover,
+.theo-footer a[tel]:not(:is(.theo-icon-button)):hover,
+.theo-footer a[href]:not(:is(.theo-icon-button)):focus,
+.theo-footer a[tel]:not(:is(.theo-icon-button)):focus {
   color: var(--link-interacted-colour);
 }
 
-.theo-footer a[href]:hover:after,
-.theo-footer a[tel]:hover:after,
-.theo-footer a[href]:focus:after,
-.theo-footer a[tel]:focus:after {
+.theo-footer a[href]:not(:is(.theo-icon-button)):hover:after,
+.theo-footer a[tel]:not(:is(.theo-icon-button)):hover:after,
+.theo-footer a[href]:not(:is(.theo-icon-button)):focus:after,
+.theo-footer a[tel]:not(:is(.theo-icon-button)):focus:after {
   z-index: -1;
   block-size: 112%;
   transition: height 0.15s, color 0.15s;
 }
 
-@media (width > 960px) {
-  .theo-footer a[href],
-  .theo-footer a[tel] {
-    font-size: 2rem;
+@media (width > 758px) {
+  .theo-footer a[href]:not(:is(.theo-icon-button)),
+  .theo-footer a[tel]:not(:is(.theo-icon-button)) {
+    font-size: 1.4rem;
   }
-  .theo-footer a[href]:after,
-  .theo-footer a[tel]:after {
-    block-size: 0.5rem;
+  .theo-footer a[href]:not(:is(.theo-icon-button)):after,
+  .theo-footer a[tel]:not(:is(.theo-icon-button)):after {
+    block-size: 0.2rem;
   }
+}
+
+.theo-footer__mascot {
+  margin: 0 1rem 0 0;
+  justify-content: center;
+  display: flex;
+}
+
+.theo-footer__address {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.-pb-05rem {
+  padding-block-end: 0.5rem;
+  display: block;
+}
+
+.theo-footer__social {
+  display: inline-flex;
+  gap: 1rem;
+  margin-block-start: 2rem;
 }

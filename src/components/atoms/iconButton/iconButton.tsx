@@ -9,6 +9,9 @@ interface Props {
   ariaPopup?: boolean;
   needsAria?: boolean;
   disabled?: boolean;
+  asLink?: boolean;
+  whereTo?: string;
+  label?: string;
 }
 
 const IconButton: FC<Props> = ({
@@ -19,8 +22,14 @@ const IconButton: FC<Props> = ({
   ariaPopup,
   needsAria,
   disabled,
+  asLink,
+  whereTo,
 }) => {
-  return (
+  return asLink ? (
+    <a href={whereTo} rel='noopener noreferer' className='theo-icon-button'>
+      {children}
+    </a>
+  ) : (
     <button
       disabled={disabled}
       type='button'
