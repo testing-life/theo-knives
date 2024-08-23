@@ -1,15 +1,19 @@
-.theo-link {
-  display: block;
+.theo-footer {
+}
+
+.theo-footer a[href]:not(:has(.theo-icon-button)),
+.theo-footer a[tel]:not(:has(.theo-icon-button)) {
+  display: inline-block;
   font-weight: var(--light-weight);
   font-size: 1.4rem;
-  padding: 0 1rem;
   color: var(--link-colour);
   text-decoration: none;
   position: relative;
   z-index: 1;
 }
 
-.theo-link:after {
+.theo-footer a[href]:after,
+.theo-footer a[tel]:after {
   content: '';
   inline-size: 100%;
   block-size: 0.2rem;
@@ -22,23 +26,29 @@
   transition: height 0.15s, color 0.15s;
 }
 
-.theo-link:hover,
-.theo-link:focus {
+.theo-footer a[href]:hover,
+.theo-footer a[tel]:hover,
+.theo-footer a[href]:focus,
+.theo-footer a[tel]:focus {
   color: var(--link-interacted-colour);
 }
 
-.theo-link:hover:after,
-.theo-link:focus:after {
+.theo-footer a[href]:hover:after,
+.theo-footer a[tel]:hover:after,
+.theo-footer a[href]:focus:after,
+.theo-footer a[tel]:focus:after {
   z-index: -1;
   block-size: 112%;
   transition: height 0.15s, color 0.15s;
 }
 
 @media (width > 960px) {
-  .theo-link {
+  .theo-footer a[href],
+  .theo-footer a[tel] {
     font-size: 2rem;
   }
-  .theo-link:after {
+  .theo-footer a[href]:after,
+  .theo-footer a[tel]:after {
     block-size: 0.5rem;
   }
 }

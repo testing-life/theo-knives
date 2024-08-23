@@ -11,6 +11,10 @@
   transform: translate3d(0%, 0px, 0px);
 }
 
+.theo-main-nav .theo-link {
+  padding: 0 1rem;
+}
+
 @media (width > 960px) {
   .theo-main-nav {
     background-color: transparent;

@@ -3,7 +3,7 @@ import './iconButton.css';
 
 interface Props {
   children: ReactNode;
-  clickHandler: () => void;
+  clickHandler?: () => void;
   ariaControls?: string;
   ariaExpanded?: boolean;
   ariaPopup?: boolean;
