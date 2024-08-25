@@ -7,6 +7,7 @@ interface Props {
 }
 
 const Model: FC<Props> = ({ blok }) => {
+  console.log('blok', blok);
   const modelType = blok.name?.toLowerCase().split(' ').join('') || 'all';
   return (
     <article {...storyblokEditable(blok)} className='theo-model'>
