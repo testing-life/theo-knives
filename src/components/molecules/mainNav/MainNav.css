@@ -46,4 +46,5 @@
 .theo-main-nav-wrapper {
   justify-content: flex-end;
   margin-block-end: 9rem;
+  display: flex;
 }

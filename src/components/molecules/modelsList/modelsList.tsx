@@ -10,8 +10,8 @@ interface Props {
 const ModelsList: FC<Props> = ({ blok }) => {
   return (
     <ul {...storyblokEditable(blok)} className='theo-models'>
-      {blok.models.map((model: any) => (
-        <li key={blok.uid} className=''>
+      {blok.models.map((model: any, index: number) => (
+        <li key={`${blok.name}${index}`} className=''>
           <Model blok={model} />
         </li>
       ))}
