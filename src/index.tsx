@@ -14,6 +14,8 @@ import Product from 'components/molecules/product/product';
 import Model from 'components/molecules/model/model';
 import ModelsList from 'components/molecules/modelsList/modelsList';
 import HeroBanner from 'components/molecules/heroBanner/heroBanner';
+import Tab from 'components/atoms/tab/tab';
+import Tabs from 'components/molecules/tabs/tabs';
 // import Grid from './components/Grid';
 // import Feature from './components/Feature';
 
@@ -27,6 +29,8 @@ storyblokInit({
     link: Link,
     product: Product,
     model: Model,
+    tabs: Tabs,
+    tab: Tab,
     'main-nav': MainNav,
     'hero-banner': HeroBanner,
     models: ModelsList,
