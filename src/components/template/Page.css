@@ -1,5 +1,8 @@
 .theo-page {
   inline-size: 100%;
+  block-size: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 @media (width > 1194px) {

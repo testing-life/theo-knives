@@ -45,6 +45,7 @@
   .theo-product-gallery {
     background-color: transparent;
     position: relative;
+    align-items: flex-start;
   }
 
   .theo-product-gallery__list {

@@ -16,6 +16,7 @@ import ModelsList from 'components/molecules/modelsList/modelsList';
 import HeroBanner from 'components/molecules/heroBanner/heroBanner';
 import Tab from 'components/atoms/tab/tab';
 import Tabs from 'components/molecules/tabs/tabs';
+import { BrowserRouter } from 'react-router-dom';
 // import Grid from './components/Grid';
 // import Feature from './components/Feature';
 
@@ -45,7 +46,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
