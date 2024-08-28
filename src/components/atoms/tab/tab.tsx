@@ -1,17 +1,21 @@
 import React, { FC } from 'react';
-import { SbBlokData, storyblokEditable } from '@storyblok/react';
+import { storyblokEditable } from '@storyblok/react';
+import './tab.css';
 
 interface Props {
   blok: any;
   clickHandler: (val: string) => void;
   isSelected: string;
 }
+
 const Tab: FC<Props> = ({ blok, clickHandler, isSelected }) => {
-  console.log('tabl', blok);
+  const onClick = () => clickHandler(blok.label);
   return (
     <button
-      onClick={() => clickHandler(blok.label)}
-      className={`${isSelected === blok.label ? '-is-selected' : ''}`}
+      onClick={onClick}
+      className={`theo-tab ${
+        isSelected === blok.label.toLowerCase() ? '-is-selected' : ''
+      }`}
       type='button'
       {...storyblokEditable(blok)}
     >

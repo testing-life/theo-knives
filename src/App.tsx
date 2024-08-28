@@ -11,19 +11,18 @@ function StoryblokPage() {
     return <div>Loading...</div>;
   }
 
-  return (
-    <div data-theme='default' className='theo-root'>
-      <StoryblokComponent blok={story.content} />
-    </div>
-  );
+  return <StoryblokComponent blok={story.content}></StoryblokComponent>;
 }
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<StoryblokPage />} />
-      <Route path='/:slug' element={<PortfolioPage />} />
-    </Routes>
+    <div data-theme='default' className='theo-root'>
+      <Routes>
+        <Route path='/' element={<StoryblokPage />} />
+        <Route path='/:slug' element={<StoryblokPage />} />
+        <Route path='/portfolio' element={<PortfolioPage />} />
+      </Routes>
+    </div>
   );
 }
 

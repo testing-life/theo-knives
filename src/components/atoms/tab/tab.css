@@ -1,2 +1,21 @@
 .theo-tab {
+  background: transparent;
+  border: 0;
+  border-block-end: 0.2rem solid var(--tab-accent);
+  color: var(--text-colour);
+  padding-block-end: 0.4rem;
+  font-size: 1.6rem;
+}
+
+@media (width > 758px) {
+  .theo-tab {
+    font-size: 2.4rem;
+  }
+}
+
+.theo-tab:hover,
+.theo-tab:focus,
+.theo-tab.-is-selected {
+  border-block-end: 0.4rem solid var(--tab-accent);
+  padding-block-end: 0.2rem;
 }
