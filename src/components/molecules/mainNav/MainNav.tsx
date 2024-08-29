@@ -26,6 +26,15 @@ const MainNav: FC<Props> = ({ blok }) => {
           <Menu />
         </IconButton>
       )}
+      <picture className='theo-main-nav__picture'>
+        <source srcSet={blok.logo.filename} media='(min-width: 758px)' />
+        <img
+          className='theo-main-nav__logo'
+          src={blok.mobileLogo.filename}
+          alt=''
+        />
+      </picture>
+
       <nav
         {...(!forTablet && { 'aria-hidden': !isOpen })}
         className={`pure-menu theo-main-nav  ${
