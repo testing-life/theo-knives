@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import { storyblokInit, apiPlugin } from '@storyblok/react';
 import Page from 'components/template/Page';
-import Heading from 'components/atoms/Heading';
+import Heading from 'components/atoms/heading/heading';
 import Button from 'components/atoms/button/button';
 import Link from 'components/atoms/link/link';
 import MainNav from 'components/molecules/mainNav/MainNav';
@@ -17,6 +17,7 @@ import HeroBanner from 'components/molecules/heroBanner/heroBanner';
 import Tab from 'components/atoms/tab/tab';
 import Tabs from 'components/molecules/tabs/tabs';
 import { BrowserRouter } from 'react-router-dom';
+import Paragraph from 'components/atoms/parapgraph/paragraph';
 // import Grid from './components/Grid';
 // import Feature from './components/Feature';
 
@@ -24,10 +25,10 @@ storyblokInit({
   accessToken: 'Yg0RlkdoBtQa0vGTYexlmwtt',
   use: [apiPlugin],
   components: {
-    heading: Heading,
     page: Page,
     button: Button,
     link: Link,
+    paragraph: Paragraph,
     product: Product,
     model: Model,
     tabs: Tabs,
@@ -35,6 +36,7 @@ storyblokInit({
     'main-nav': MainNav,
     'hero-banner': HeroBanner,
     models: ModelsList,
+    heading: Heading,
     // teaser: Teaser,
     // grid: Grid,
     // feature: Feature,

@@ -11,6 +11,12 @@
   transform: translate3d(0%, 0px, 0px);
 }
 
+@media (width > 758px) {
+  .theo-main-nav {
+    inline-size: 35%;
+  }
+}
+
 .theo-main-nav .theo-link {
   padding: 0 1rem;
 }

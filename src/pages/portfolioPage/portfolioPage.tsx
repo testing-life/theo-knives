@@ -74,20 +74,22 @@ const PortfolioPage = () => {
   }, [param.has('model'), filteredProducts.length]);
 
   return (
-    <main className='theo-page'>
-      <section>
-        {nav && <MainNav blok={nav} />}
-        {tabs && <Tabs blok={tabs} onSelect={filterProducts} />}
-        <ul>
-          {filteredProducts.map((product) => (
-            <li className='-mb-1rem'>
-              <Product blok={product} />
-            </li>
-          ))}
-        </ul>
-        <Footer />
-      </section>
-    </main>
+    <>
+      <main className='theo-page'>
+        <section>
+          {nav && <MainNav blok={nav} />}
+          {tabs && <Tabs blok={tabs} onSelect={filterProducts} />}
+          <ul>
+            {filteredProducts.map((product) => (
+              <li className='-mb-1rem'>
+                <Product blok={product} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 };
 
