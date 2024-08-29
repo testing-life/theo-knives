@@ -6,10 +6,12 @@ import './tabs.css';
 interface Props {
   blok: any;
   onSelect: (val: string) => void;
+  paramFilter: string;
 }
 
-const Tabs: FC<Props> = ({ blok, onSelect }) => {
-  const [selection, setSelection] = useState('all');
+const Tabs: FC<Props> = ({ blok, onSelect, paramFilter }) => {
+  const [selection, setSelection] = useState('');
+
   const selectionHandler = (value: string) => {
     if (!value) {
       return;
@@ -24,7 +26,7 @@ const Tabs: FC<Props> = ({ blok, onSelect }) => {
         <li key={tab._uid} className=''>
           <Tab
             blok={tab}
-            isSelected={selection}
+            isSelected={paramFilter || selection}
             clickHandler={selectionHandler}
           />
         </li>

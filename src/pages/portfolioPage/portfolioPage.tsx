@@ -11,6 +11,7 @@ import { useSearchParams } from 'react-router-dom';
 const PortfolioPage = () => {
   const [nav, setNav] = useState();
   const [tabs, setTabs] = useState();
+  const [filter, setFilter] = useState('all');
   const [products, setProducts] = useState<unknown[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<unknown[]>([]);
   const [param] = useSearchParams();
@@ -55,11 +56,6 @@ const PortfolioPage = () => {
         (filter === 'instock' && product.available) ||
         toNoSpaceLowercase(product.model) === filter
       ) {
-        console.log(
-          'first',
-          toNoSpaceLowercase(product.model) === filter,
-          filter
-        );
         return product;
       }
     });
@@ -67,18 +63,30 @@ const PortfolioPage = () => {
   };
 
   useEffect(() => {
-    if (filteredProducts.length && param.has('model')) {
-      const filter = param.get('model');
+    if (filteredProducts.length) {
       filterProducts(filter as string);
     }
-  }, [param.has('model'), filteredProducts.length]);
+  }, [, filteredProducts.length, filter]);
+
+  useEffect(() => {
+    if (param.has('model')) {
+      const paramFilter = param.get('model');
+      setFilter(paramFilter as string);
+    }
+  }, [param.has('model')]);
 
   return (
     <>
       <main className='theo-page'>
         <section>
           {nav && <MainNav blok={nav} />}
-          {tabs && <Tabs blok={tabs} onSelect={filterProducts} />}
+          {tabs && (
+            <Tabs
+              blok={tabs}
+              paramFilter={filter}
+              onSelect={(value) => setFilter(value)}
+            />
+          )}
           <ul>
             {filteredProducts.map((product) => (
               <li className='-mb-1rem'>
