@@ -1,6 +1,6 @@
 .theo-page {
   inline-size: 100%;
-  block-size: 100vh;
+  min-block-size: 100%;
   display: flex;
   flex-direction: column;
   margin-block-end: 5rem;

@@ -22,7 +22,7 @@ import Paragraph from 'components/atoms/parapgraph/paragraph';
 // import Feature from './components/Feature';
 
 storyblokInit({
-  accessToken: 'Yg0RlkdoBtQa0vGTYexlmwtt',
+  accessToken: process.env.REACT_APP_STORYBLOK_TOKEN,
   use: [apiPlugin],
   components: {
     page: Page,
