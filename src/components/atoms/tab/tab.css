@@ -3,7 +3,7 @@
   border: 0;
   border-block-end: 0.2rem solid var(--tab-accent);
   color: var(--text-colour);
-  padding-block-end: 0.4rem;
+  padding: 0 1rem 0.4rem 1rem;
   font-size: 1.6rem;
 }
 
@@ -16,6 +16,11 @@
 .theo-tab:hover,
 .theo-tab:focus,
 .theo-tab.-is-selected {
-  border-block-end: 0.4rem solid var(--tab-accent);
-  padding-block-end: 0.2rem;
+  border-block-end: 0.6rem solid var(--tab-accent);
+  padding: 0 1rem;
+}
+
+.theo-tab:hover,
+.theo-tab:focus {
+  cursor: pointer;
 }

@@ -15,6 +15,9 @@ const Product: FC<Props> = ({ blok }) => {
         <header className='theo-product__header'>
           <h2 className='theo-product__name'>{blok.name}</h2>
           <span className='theo-product__model'>{blok.model}</span>
+          {blok.available && (
+            <span className='theo-product__available'>In Stock</span>
+          )}
         </header>
         <p className='theo-product__description'>{blok.description}</p>
         <a className='pure-button theo-button'>
