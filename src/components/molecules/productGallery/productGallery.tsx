@@ -11,7 +11,7 @@ interface Props {
 
 const ProductGallery: FC<Props> = ({ images }) => {
   const [slideIndex, setSlideIndex] = useState(0);
-  const [forTablet] = useBreakpoints();
+  const [forTablet, forDesktop] = useBreakpoints();
   const sliderRef = useRef<HTMLUListElement>(null);
 
   const isPrevDisabled: boolean = slideIndex === 0;
@@ -59,7 +59,7 @@ const ProductGallery: FC<Props> = ({ images }) => {
           </li>
         ))}
       </ul>
-      {!forTablet ? (
+      {!forTablet && !forDesktop ? (
         <div className='theo-product-gallery__controls'>
           <IconButton disabled={isPrevDisabled} clickHandler={slidePrev}>
             <Prev />
