@@ -3,7 +3,7 @@ import './productGallery.css';
 import IconButton from 'components/atoms/iconButton/iconButton';
 import { ReactComponent as Prev } from 'assets/icons/Chevron left.svg';
 import { ReactComponent as Next } from 'assets/icons/Chevron right.svg';
-import { forTablet } from 'utils/breakpoints';
+import useBreakpoints from 'hooks/useBreakpoints';
 
 interface Props {
   images: { [key: string]: string }[];
@@ -11,6 +11,7 @@ interface Props {
 
 const ProductGallery: FC<Props> = ({ images }) => {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [forTablet] = useBreakpoints();
   const sliderRef = useRef<HTMLUListElement>(null);
 
   const isPrevDisabled: boolean = slideIndex === 0;

@@ -5,7 +5,7 @@ import { ReactComponent as Menu } from 'assets/icons/Menu.svg';
 import { ReactComponent as Close } from 'assets/icons/X.svg';
 import './MainNav.css';
 import IconButton from 'components/atoms/iconButton/iconButton';
-import useBreakpoints from 'hooks/breakpoints';
+import useBreakpoints from 'hooks/useBreakpoints';
 
 interface Props {
   blok: any;
@@ -13,7 +13,7 @@ interface Props {
 
 const MainNav: FC<Props> = ({ blok }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [forTablet, forDesktop] = useBreakpoints();
+  const [forTablet] = useBreakpoints();
   const ariaId = 'mainNav';
   return (
     <div className='theo-main-nav-wrapper'>
