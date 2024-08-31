@@ -37,9 +37,6 @@ storyblokInit({
     'hero-banner': HeroBanner,
     models: ModelsList,
     heading: Heading,
-    // teaser: Teaser,
-    // grid: Grid,
-    // feature: Feature,
   },
 });
 

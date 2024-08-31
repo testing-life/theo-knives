@@ -13,11 +13,11 @@ interface Props {
 
 const MainNav: FC<Props> = ({ blok }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [forTablet] = useBreakpoints();
+  const [forTablet, forDesktop] = useBreakpoints();
   const ariaId = 'mainNav';
   return (
     <div className='theo-main-nav-wrapper'>
-      {!forTablet && (
+      {!forTablet && !forDesktop && (
         <IconButton
           needsAria
           ariaPopup={true}

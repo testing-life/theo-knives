@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
-const forTabletBreakpoint = 960;
-const forDesktopBreakpoint = 1140;
+const forTabletBreakpoint = 758;
+const forDesktopBreakpoint = 1024;
 
 const useBreakpoints = () => {
-  const [forTablet, setForTablet] = useState(false);
-  const [forDesktop, setForDesktop] = useState(false);
   const forTableMediaQueryList = window.matchMedia(
     `(width > ${forTabletBreakpoint}px)`
   );
   const forDesktopMediaQueryList = window.matchMedia(
     `(width > ${forDesktopBreakpoint}px)`
+  );
+  const [forTablet, setForTablet] = useState(forTableMediaQueryList.matches);
+  const [forDesktop, setForDesktop] = useState(
+    forDesktopMediaQueryList.matches
   );
 
   useEffect(() => {
