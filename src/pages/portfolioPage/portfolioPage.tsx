@@ -6,7 +6,8 @@ import Tabs from 'components/molecules/tabs/tabs';
 import React, { useEffect, useState } from 'react';
 import './portfolioPage.css';
 import { toNoSpaceLowercase } from 'utils/string';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import LanguageSwitcher from 'components/molecules/languageSwitcher/languageSwitcher';
 
 const PortfolioPage = () => {
   const [nav, setNav] = useState();
@@ -15,6 +16,7 @@ const PortfolioPage = () => {
   const [products, setProducts] = useState<unknown[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<unknown[]>([]);
   const [param] = useSearchParams();
+  const location = useLocation();
 
   const story = useStoryblok('/portfolio', {
     version: 'published',
@@ -77,6 +79,7 @@ const PortfolioPage = () => {
 
   return (
     <>
+      {/* {console.log('location', location)} */}
       <main className='theo-page'>
         <section>
           {nav && <MainNav blok={nav} />}
@@ -95,6 +98,7 @@ const PortfolioPage = () => {
             ))}
           </ul>
         </section>
+        <LanguageSwitcher />
       </main>
       <Footer />
     </>
