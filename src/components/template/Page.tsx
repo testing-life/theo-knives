@@ -13,7 +13,6 @@ const Page = ({ blok }: any) => {
             ))
           : null}
       </main>
-      <LanguageSwitcher />
       <Footer />
     </>
   );

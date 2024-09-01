@@ -1,8 +1,9 @@
 import React from 'react';
+import './select.css';
 
 interface Props<T, K> {
   options: T;
-  value: K;
+  value?: K;
   label: string;
   id: string;
   changeHandler: (e: K) => void;
@@ -17,8 +18,11 @@ const Select = <T extends Record<string, any>, K extends keyof T>({
 }: Props<T, K>) => {
   return (
     <>
-      <label htmlFor={id}>{label}</label>
+      <label className='theo-select__label -a11y-hide' htmlFor={id}>
+        {label}
+      </label>
       <select
+        className='theo-select__select'
         value={value as string}
         id={id}
         onChange={(e) => changeHandler(e.target.value as K)}

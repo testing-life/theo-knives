@@ -7,18 +7,19 @@ import { LanguageProvider, useLanguage } from 'context/languageContext';
 const StoryblokPage = () => {
   let { slug } = useParams<{ slug: string }>();
   slug = slug || 'home';
+  console.log('slug', slug);
   const { language } = useLanguage();
+  console.log('language in storyblok page', language);
   const story = useStoryblok(slug, {
     version: 'draft',
     language: language as string,
+    fallback_lang: 'de',
   });
-
-  console.log('out lang', language);
 
   if (!story || !story.content) {
     return <div>Loading...</div>;
   }
-
+  console.log('story', story);
   return <StoryblokComponent blok={story.content}></StoryblokComponent>;
 };
 
@@ -28,7 +29,7 @@ function App() {
       <LanguageProvider>
         <Routes>
           <Route path='/' element={<StoryblokPage />} />
-          <Route path='/:slug' element={<StoryblokPage />} />
+          <Route path='/:lang/:slug' element={<StoryblokPage />} />
           <Route path='/portfolio' element={<PortfolioPage />} />
         </Routes>
       </LanguageProvider>

@@ -79,7 +79,7 @@ const PortfolioPage = () => {
 
   return (
     <>
-      {/* {console.log('location', location)} */}
+      {console.log('location', location)}
       <main className='theo-page'>
         <section>
           {nav && <MainNav blok={nav} />}

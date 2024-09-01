@@ -62,6 +62,11 @@
   margin: 0 1rem 0 0;
   justify-content: center;
   display: flex;
+  align-items: flex-start;
+}
+
+.theo-footer__img {
+  object-fit: contain;
 }
 
 .theo-footer__address {

@@ -5,13 +5,14 @@ import { ReactComponent as Fb } from 'assets/icons/Facebook.svg';
 import { ReactComponent as In } from 'assets/icons/Instagram.svg';
 import './footer.css';
 import Mascot from 'assets/mascot.png';
+import LanguageSwitcher from '../languageSwitcher/languageSwitcher';
 
 const Footer = () => {
   return (
     <footer className='theo-footer'>
       <div className='theo-footer__address'>
         <figure className='theo-footer__mascot'>
-          <img className='pure-img' src={Mascot} alt='' />
+          <img className='pure-img theo-footer__img' src={Mascot} alt='' />
         </figure>
         <div className=''>
           <span className='-pb-05rem'>John Doe - Custom Knife Maker</span>
@@ -30,8 +31,12 @@ const Footer = () => {
               }}
             />
           </span>
+
           <span className='-pb-05rem'>
             &copy; Custom Knife Maker {new Date().getFullYear()}
+          </span>
+          <span className='-pb-05rem'>
+            <LanguageSwitcher />
           </span>
           <div className='theo-footer__social'>
             <IconButton asLink whereTo=''>

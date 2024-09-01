@@ -11,16 +11,6 @@ const LanguageSwitcher = () => {
 
   return (
     <form className='theo-language'>
-      {/* <label htmlFor='lang'>{language === 'de' ? 'Sprache' : 'Language'}</label>
-      <select
-        value={language as string}
-        id='lang'
-        onChange={(e) => setLanguage(e.target.value as LanguageCode)}
-      >
-        {Object.entries(LanguageDictionary).map(([code, label]) => (
-          <option value={code}>{label}</option>
-        ))}
-      </select> */}
       <Select<typeof LanguageDictionary, LanguageCode>
         options={LanguageDictionary}
         value={language}
