@@ -1,0 +1,72 @@
+.theo-main-nav {
+  background-color: var(--drawer-bg);
+  block-size: 100%;
+  position: fixed;
+  inset-inline-end: 0;
+  inline-size: 75%;
+  z-index: 9;
+  padding: 1rem;
+  inset-block-start: 0;
+  transition: transform 0.25s ease-out;
+  transform: translate3d(0%, 0px, 0px);
+}
+
+@media (width > 758px) {
+  .theo-main-nav {
+    inline-size: 35%;
+  }
+}
+
+.theo-main-nav .theo-link {
+  padding: 0 1rem;
+}
+
+@media (width > 758px) {
+  .theo-main-nav {
+    background-color: transparent;
+    position: relative;
+    inline-size: 100%;
+    text-align: center;
+  }
+  .theo-main-nav .pure-menu-item:not(:last-child) {
+    margin-inline-end: 1rem;
+  }
+}
+
+.theo-main-nav:not(.pure-menu-horizontal) .pure-menu-item:not(:last-child) {
+  margin-block-end: 1rem;
+}
+
+.theo-main-nav:has(:not(.pure-menu-horizontal)) .pure-menu-list {
+  margin-block-start: 3.2rem;
+}
+
+.is-hidden {
+  visibility: hidden;
+  position: fixed;
+  inset: 0px auto 0px 0px;
+  transform: translate3d(140%, 0px, 0px);
+  transition: transform 0.25s;
+}
+
+.theo-main-nav-wrapper {
+  justify-content: flex-end;
+  margin-block-end: 9rem;
+  display: flex;
+  align-items: center;
+}
+
+.theo-main-nav__logo {
+  max-inline-size: 4rem;
+}
+
+.theo-main-nav__picture {
+  order: -1;
+  margin-inline-end: auto;
+}
+
+@media (width > 758px) {
+  .theo-main-nav__logo {
+    max-inline-size: 6rem;
+  }
+}

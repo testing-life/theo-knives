@@ -1,0 +1,14 @@
+.theo-page {
+  inline-size: 100%;
+  min-block-size: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-block-end: 5rem;
+}
+
+@media (width > 1194px) {
+  .theo-page {
+    max-inline-size: 102.4rem;
+    margin: 0 auto 10rem;
+  }
+}

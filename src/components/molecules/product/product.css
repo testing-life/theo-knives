@@ -1,0 +1,57 @@
+.theo-product {
+  background: var(--product-bg);
+  padding: 1rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (width > 960px) {
+  .theo-product {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .theo-product__content {
+    flex: 1;
+  }
+
+  .theo-product-gallery {
+    flex: 2;
+  }
+}
+
+.theo-product__header {
+  margin-block-end: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.theo-product__name {
+  font-size: 1.4rem;
+  font-weight: var(--bold-weight);
+  text-transform: uppercase;
+  margin-inline-end: auto;
+}
+
+.theo-product__model {
+  color: var(--model-colour);
+  text-wrap: nowrap;
+}
+
+.theo-product__description {
+  margin-block-end: 1rem;
+}
+
+.theo-product__available {
+  background: var(--pill-bg);
+  padding: 0.2rem 0.8rem;
+  font-weight: var(--bold-weight);
+  color: var(--pill-colour);
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  line-height: 1.2;
+  text-wrap: nowrap;
+}

@@ -1,0 +1,52 @@
+.theo-hero {
+  position: relative;
+  border-block-start-width: 0.4rem;
+  border-block-end-width: 0.4rem;
+  border-image-source: var(--separator-bg);
+  border-image-slice: 1;
+  border-style: solid;
+  text-align: center;
+}
+
+.theo-hero__heading {
+  font-size: 2.2rem;
+  font-weight: var(--semibold-weight);
+  position: absolute;
+  text-shadow: 0.2rem 0.2rem var(--text-shadow);
+  inset-block-end: 7rem;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+@media (width > 700px) {
+  .theo-hero__heading {
+    inset-block-end: 15rem;
+    padding: 0 2rem;
+  }
+}
+
+@media (width > 1140px) {
+  .theo-hero__heading {
+    font-size: 3.2rem;
+    inset-block-end: 15rem;
+  }
+}
+
+.theo-hero .theo-button {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-inline-end: 1rem;
+  inline-size: auto;
+  inset-block-end: 1rem;
+  inline-size: auto;
+}
+
+@media (width > 700px) {
+  .theo-hero .theo-button {
+    position: absolute;
+    inset-block-end: 6rem;
+    inset-inline-start: auto;
+    inset-inline-end: auto;
+    transform: translateX(-50%);
+  }
+}

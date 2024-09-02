@@ -1,0 +1,44 @@
+.theo-link {
+  display: block;
+  font-weight: var(--light-weight);
+  font-size: 1.4rem;
+  padding: 0 1rem;
+  color: var(--link-colour);
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+.theo-link:after {
+  content: '';
+  inline-size: 100%;
+  block-size: 0.2rem;
+  display: block;
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-end: -2px;
+  background: var(--link-interacted-bg);
+  z-index: 1;
+  transition: height 0.15s, color 0.15s;
+}
+
+.theo-link:hover,
+.theo-link:focus {
+  color: var(--link-interacted-colour);
+}
+
+.theo-link:hover:after,
+.theo-link:focus:after {
+  z-index: -1;
+  block-size: 112%;
+  transition: height 0.15s, color 0.15s;
+}
+
+@media (width > 960px) {
+  .theo-link {
+    font-size: 2rem;
+  }
+  .theo-link:after {
+    block-size: 0.5rem;
+  }
+}
