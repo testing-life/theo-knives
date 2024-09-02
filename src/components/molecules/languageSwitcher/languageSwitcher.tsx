@@ -4,7 +4,6 @@ import {
   LanguageDictionary,
   useLanguage,
 } from 'context/languageContext';
-import React from 'react';
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();

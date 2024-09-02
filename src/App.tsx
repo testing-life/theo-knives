@@ -1,25 +1,34 @@
 import { useStoryblok, StoryblokComponent } from '@storyblok/react';
 import './App.css';
-import { Route, Routes, useParams } from 'react-router-dom';
+import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import PortfolioPage from 'pages/portfolioPage/portfolioPage';
-import { LanguageProvider, useLanguage } from 'context/languageContext';
+import {
+  LanguageCode,
+  LanguageProvider,
+  useLanguage,
+} from 'context/languageContext';
+import { useEffect } from 'react';
 
 const StoryblokPage = () => {
-  let { slug } = useParams<{ slug: string }>();
+  let { slug, lang } = useParams<{ slug: string; lang: LanguageCode }>();
   slug = slug || 'home';
-  console.log('slug', slug);
   const { language } = useLanguage();
-  console.log('language in storyblok page', language);
+  const navigate = useNavigate();
+
   const story = useStoryblok(slug, {
     version: 'draft',
-    language: language as string,
-    fallback_lang: 'de',
+    language: lang,
   });
+
+  useEffect(() => {
+    if (language && language !== lang) {
+      navigate(`/${language}/${slug}`, { replace: true });
+    }
+  }, [language]);
 
   if (!story || !story.content) {
     return <div>Loading...</div>;
   }
-  console.log('story', story);
   return <StoryblokComponent blok={story.content}></StoryblokComponent>;
 };
 

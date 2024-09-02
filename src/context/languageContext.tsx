@@ -3,6 +3,7 @@ import React, {
   createContext,
   ReactNode,
   useContext,
+  useMemo,
   useState,
 } from 'react';
 
@@ -23,8 +24,13 @@ const LanguageContext = createContext<LangContext>({} as LangContext);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<LanguageCode>();
+
+  const value = useMemo(
+    () => ({ language, setLanguage }),
+    [language, setLanguage]
+  );
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
