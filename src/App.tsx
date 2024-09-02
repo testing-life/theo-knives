@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 const StoryblokPage = () => {
   let { slug, lang } = useParams<{ slug: string; lang: LanguageCode }>();
   slug = slug || 'home';
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const navigate = useNavigate();
 
   const story = useStoryblok(slug, {
@@ -25,6 +25,12 @@ const StoryblokPage = () => {
       navigate(`/${language}/${slug}`, { replace: true });
     }
   }, [language]);
+
+  useEffect(() => {
+    if (lang && !language) {
+      setLanguage(lang);
+    }
+  }, []);
 
   if (!story || !story.content) {
     return <div>Loading...</div>;
