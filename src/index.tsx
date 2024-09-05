@@ -18,6 +18,8 @@ import Tab from 'components/atoms/tab/tab';
 import Tabs from 'components/molecules/tabs/tabs';
 import { BrowserRouter } from 'react-router-dom';
 import Paragraph from 'components/atoms/parapgraph/paragraph';
+import ErrorBoundary from 'pages/errorBoundary/errorBoundary';
+import Fallback from 'components/molecules/fallback/fallback';
 // import Grid from './components/Grid';
 // import Feature from './components/Feature';
 
@@ -46,7 +48,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ErrorBoundary fallback={<Fallback />}>
+        <App />
+      </ErrorBoundary>
     </BrowserRouter>
   </React.StrictMode>
 );

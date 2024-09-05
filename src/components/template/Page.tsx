@@ -1,7 +1,6 @@
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react';
 import './Page.css';
 import Footer from 'components/molecules/footer/footer';
-import LanguageSwitcher from 'components/molecules/languageSwitcher/languageSwitcher';
 
 const Page = ({ blok }: any) => {
   return (

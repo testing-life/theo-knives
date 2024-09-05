@@ -19,7 +19,6 @@ const StoryblokPage = () => {
     version: 'draft',
     language: lang,
   });
-
   useEffect(() => {
     if (language && language !== lang) {
       navigate(`/${language}/${slug}`, { replace: true });
@@ -30,10 +29,13 @@ const StoryblokPage = () => {
     if (lang && !language) {
       setLanguage(lang);
     }
+    if (!lang) {
+      navigate(`/de/${slug}`, { replace: true });
+    }
   }, []);
 
   if (!story || !story.content) {
-    return <div>Loading...</div>;
+    return <div>Loading....</div>;
   }
   return <StoryblokComponent blok={story.content}></StoryblokComponent>;
 };
@@ -44,6 +46,7 @@ function App() {
       <LanguageProvider>
         <Routes>
           <Route path='/' element={<StoryblokPage />} />
+          <Route path='/:slug' element={<StoryblokPage />} />
           <Route path='/:lang/:slug' element={<StoryblokPage />} />
           <Route path='/portfolio' element={<PortfolioPage />} />
         </Routes>

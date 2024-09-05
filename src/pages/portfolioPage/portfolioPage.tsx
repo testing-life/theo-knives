@@ -3,11 +3,10 @@ import Footer from 'components/molecules/footer/footer';
 import MainNav from 'components/molecules/mainNav/MainNav';
 import Product from 'components/molecules/product/product';
 import Tabs from 'components/molecules/tabs/tabs';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './portfolioPage.css';
 import { toNoSpaceLowercase } from 'utils/string';
-import { useLocation, useSearchParams } from 'react-router-dom';
-import LanguageSwitcher from 'components/molecules/languageSwitcher/languageSwitcher';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 const PortfolioPage = () => {
   const [nav, setNav] = useState();
@@ -16,10 +15,11 @@ const PortfolioPage = () => {
   const [products, setProducts] = useState<unknown[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<unknown[]>([]);
   const [param] = useSearchParams();
-  const location = useLocation();
+  const { lang } = useParams();
 
   const story = useStoryblok('/portfolio', {
     version: 'published',
+    language: lang,
   });
 
   useEffect(() => {
@@ -60,6 +60,7 @@ const PortfolioPage = () => {
       ) {
         return product;
       }
+      return null;
     });
     setFilteredProducts(newData);
   };
@@ -79,8 +80,9 @@ const PortfolioPage = () => {
 
   return (
     <>
-      {console.log('location', location)}
       <main className='theo-page'>
+        that pagw
+        <>{console.log('tabs', tabs)}</>
         <section>
           {nav && <MainNav blok={nav} />}
           {tabs && (
@@ -98,7 +100,6 @@ const PortfolioPage = () => {
             ))}
           </ul>
         </section>
-        <LanguageSwitcher />
       </main>
       <Footer />
     </>
