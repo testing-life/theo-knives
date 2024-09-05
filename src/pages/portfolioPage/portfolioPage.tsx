@@ -60,7 +60,6 @@ const PortfolioPage = () => {
       ) {
         return product;
       }
-      return null;
     });
     setFilteredProducts(newData);
   };
@@ -81,8 +80,6 @@ const PortfolioPage = () => {
   return (
     <>
       <main className='theo-page'>
-        that pagw
-        <>{console.log('tabs', tabs)}</>
         <section>
           {nav && <MainNav blok={nav} />}
           {tabs && (

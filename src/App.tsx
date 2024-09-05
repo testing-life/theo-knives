@@ -48,7 +48,7 @@ function App() {
           <Route path='/' element={<StoryblokPage />} />
           <Route path='/:slug' element={<StoryblokPage />} />
           <Route path='/:lang/:slug' element={<StoryblokPage />} />
-          <Route path='/portfolio' element={<PortfolioPage />} />
+          <Route path='/:lang/portfolio' element={<PortfolioPage />} />
         </Routes>
       </LanguageProvider>
     </div>
