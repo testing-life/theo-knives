@@ -6,7 +6,8 @@ import Tabs from 'components/molecules/tabs/tabs';
 import { useEffect, useState } from 'react';
 import './portfolioPage.css';
 import { toNoSpaceLowercase } from 'utils/string';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { LanguageCode, useLanguage } from 'context/languageContext';
 
 const PortfolioPage = () => {
   const [nav, setNav] = useState();
@@ -15,7 +16,9 @@ const PortfolioPage = () => {
   const [products, setProducts] = useState<unknown[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<unknown[]>([]);
   const [param] = useSearchParams();
+  const { language, setLanguage } = useLanguage();
   const { lang } = useParams();
+  const navigate = useNavigate();
 
   const story = useStoryblok('/portfolio', {
     version: 'published',
@@ -76,6 +79,15 @@ const PortfolioPage = () => {
       setFilter(paramFilter as string);
     }
   }, [param.has('model')]);
+
+  useEffect(() => {
+    if (lang && !language) {
+      setLanguage(lang as LanguageCode);
+    }
+    if (language && language !== lang) {
+      navigate(`/${language}/portfolio`, { replace: true });
+    }
+  }, [lang, language]);
 
   return (
     <>
