@@ -5,6 +5,17 @@ export const LanguageDictionary = {
   de: 'Deutsch',
 } as const;
 
+export const FilterLabelsDictionary = {
+  'en-gb': {
+    inStock: 'In Stock',
+    all: 'All',
+  },
+  de: {
+    inStock: 'Verfuegbar',
+    all: 'Alle',
+  },
+} as const;
+
 export type LanguageCode = keyof typeof LanguageDictionary;
 export type LanguageValue = (typeof LanguageDictionary)[LanguageCode];
 

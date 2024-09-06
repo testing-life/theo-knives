@@ -7,17 +7,21 @@ import { useEffect, useState } from 'react';
 import './portfolioPage.css';
 import { toNoSpaceLowercase } from 'utils/string';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { LanguageCode, useLanguage } from 'context/languageContext';
+import {
+  FilterLabelsDictionary,
+  LanguageCode,
+  useLanguage,
+} from 'context/languageContext';
 
 const PortfolioPage = () => {
   const [nav, setNav] = useState();
   const [tabs, setTabs] = useState();
-  const [filter, setFilter] = useState('all');
   const [products, setProducts] = useState<unknown[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<unknown[]>([]);
   const [param] = useSearchParams();
   const { language, setLanguage } = useLanguage();
   const { lang } = useParams();
+  const [filter, setFilter] = useState();
   const navigate = useNavigate();
 
   const story = useStoryblok('/portfolio', {
@@ -26,6 +30,7 @@ const PortfolioPage = () => {
   });
 
   useEffect(() => {
+    console.log('story', story);
     if (story.content) {
       const portfolioContent = story.content.body;
       const nav = portfolioContent?.filter(
@@ -97,7 +102,12 @@ const PortfolioPage = () => {
           {tabs && (
             <Tabs
               blok={tabs}
-              paramFilter={filter}
+              paramFilter={
+                filter ||
+                FilterLabelsDictionary[
+                  (lang as LanguageCode) || (language as LanguageCode)
+                ].all
+              }
               onSelect={(value) => setFilter(value)}
             />
           )}
