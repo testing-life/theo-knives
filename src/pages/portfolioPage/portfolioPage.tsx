@@ -1,4 +1,4 @@
-import { useStoryblok } from '@storyblok/react';
+import { SbBlokData, useStoryblok } from '@storyblok/react';
 import Footer from 'components/molecules/footer/footer';
 import MainNav from 'components/molecules/mainNav/MainNav';
 import Product from 'components/molecules/product/product';
@@ -12,6 +12,8 @@ import {
   LanguageCode,
   useLanguage,
 } from 'context/languageContext';
+import { getComponent } from 'utils/blok';
+import { filterByTerm } from 'utils/filter';
 
 const PortfolioPage = () => {
   const [nav, setNav] = useState();
@@ -31,16 +33,9 @@ const PortfolioPage = () => {
 
   useEffect(() => {
     if (story.content) {
-      const portfolioContent = story.content.body;
-      const nav = portfolioContent?.filter(
-        (blok: any) => blok.component === 'main-nav'
-      )[0];
-      const products = portfolioContent?.filter(
-        (blok: any) => blok.component === 'product'
-      );
-      const tabs = portfolioContent?.filter(
-        (blok: any) => blok.component === 'tabs'
-      )[0];
+      const nav = getComponent(story, 'main-nav');
+      const products = getComponent(story, 'product', true);
+      const tabs = getComponent(story, 'tabs');
       if (nav) {
         setNav(nav);
       }
@@ -64,19 +59,12 @@ const PortfolioPage = () => {
       setFilteredProducts(products);
       return;
     }
+    const newData = filterByTerm(
+      products,
+      filter,
+      (lang as LanguageCode) || (language as LanguageCode)
+    );
 
-    const newData = products.filter((product: any) => {
-      if (
-        (filter ===
-          FilterLabelsDictionary[
-            (lang as LanguageCode) || (language as LanguageCode)
-          ].inStock &&
-          product.available) ||
-        toNoSpaceLowercase(product.model) === filter
-      ) {
-        return product;
-      }
-    });
     setFilteredProducts(newData);
   };
 
@@ -129,7 +117,7 @@ const PortfolioPage = () => {
           )}
           <ul>
             {filteredProducts.map((product) => (
-              <li className='-mb-1rem'>
+              <li key={(product as any)._uid} className='-mb-1rem'>
                 <Product blok={product} />
               </li>
             ))}
