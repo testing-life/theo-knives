@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 const forTabletBreakpoint = 758;
 const forDesktopBreakpoint = 1024;
 
 const useBreakpoints = () => {
-  const forTableMediaQueryList = window.matchMedia(
-    `(width > ${forTabletBreakpoint}px)`
+  const forTableMediaQueryList = useMemo(
+    () => window.matchMedia(`(width > ${forTabletBreakpoint}px)`),
+    []
   );
-  const forDesktopMediaQueryList = window.matchMedia(
-    `(width > ${forDesktopBreakpoint}px)`
+  const forDesktopMediaQueryList = useMemo(
+    () => window.matchMedia(`(width > ${forDesktopBreakpoint}px)`),
+    []
   );
   const [forTablet, setForTablet] = useState(forTableMediaQueryList.matches);
   const [forDesktop, setForDesktop] = useState(
@@ -31,7 +33,7 @@ const useBreakpoints = () => {
         desktopMediaQueryChange
       );
     };
-  }, []);
+  }, [forDesktopMediaQueryList, forTableMediaQueryList]);
 
   const tabletMediaQueryChange = (e: MediaQueryListEvent) => {
     setForTablet(e.matches);

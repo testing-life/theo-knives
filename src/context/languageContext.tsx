@@ -1,11 +1,4 @@
-import React, {
-  ChangeEvent,
-  createContext,
-  ReactNode,
-  useContext,
-  useMemo,
-  useState,
-} from 'react';
+import { createContext, ReactNode, useContext, useMemo, useState } from 'react';
 
 export const LanguageDictionary = {
   'en-gb': 'English',
