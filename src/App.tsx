@@ -19,6 +19,7 @@ const StoryblokPage = () => {
     version: 'draft',
     language: lang,
   });
+
   useEffect(() => {
     if (language && language !== lang) {
       navigate(`/${language}/${slug}`, { replace: true });

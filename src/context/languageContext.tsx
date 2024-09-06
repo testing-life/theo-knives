@@ -7,12 +7,12 @@ export const LanguageDictionary = {
 
 export const FilterLabelsDictionary = {
   'en-gb': {
-    inStock: 'In Stock',
-    all: 'All',
+    inStock: 'instock',
+    all: 'all',
   },
   de: {
-    inStock: 'Verfuegbar',
-    all: 'Alle',
+    inStock: 'verfuegbar',
+    all: 'alle',
   },
 } as const;
 

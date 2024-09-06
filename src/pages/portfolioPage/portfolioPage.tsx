@@ -21,7 +21,7 @@ const PortfolioPage = () => {
   const [param] = useSearchParams();
   const { language, setLanguage } = useLanguage();
   const { lang } = useParams();
-  const [filter, setFilter] = useState();
+  const [filter, setFilter] = useState('');
   const navigate = useNavigate();
 
   const story = useStoryblok('/portfolio', {
@@ -30,7 +30,6 @@ const PortfolioPage = () => {
   });
 
   useEffect(() => {
-    console.log('story', story);
     if (story.content) {
       const portfolioContent = story.content.body;
       const nav = portfolioContent?.filter(
@@ -56,14 +55,23 @@ const PortfolioPage = () => {
   }, [story.content]);
 
   const filterProducts = (filter: string) => {
-    if (filter === 'all') {
+    if (
+      filter ===
+      FilterLabelsDictionary[
+        (lang as LanguageCode) || (language as LanguageCode)
+      ].all
+    ) {
       setFilteredProducts(products);
       return;
     }
 
     const newData = products.filter((product: any) => {
       if (
-        (filter === 'instock' && product.available) ||
+        (filter ===
+          FilterLabelsDictionary[
+            (lang as LanguageCode) || (language as LanguageCode)
+          ].inStock &&
+          product.available) ||
         toNoSpaceLowercase(product.model) === filter
       ) {
         return product;
@@ -91,6 +99,14 @@ const PortfolioPage = () => {
     }
     if (language && language !== lang) {
       navigate(`/${language}/portfolio`, { replace: true });
+    }
+
+    if ((!filter && lang) || language) {
+      setFilter(
+        FilterLabelsDictionary[
+          (lang as LanguageCode) || (language as LanguageCode)
+        ].all
+      );
     }
   }, [lang, language]);
 
