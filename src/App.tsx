@@ -8,6 +8,8 @@ import {
   useLanguage,
 } from 'context/languageContext';
 import { useEffect } from 'react';
+import Loader from 'components/atoms/loader/loader';
+import LoaderLayout from 'components/molecules/loaderLayout/loaderLayout';
 
 const StoryblokPage = () => {
   let { slug, lang } = useParams<{ slug: string; lang: LanguageCode }>();
@@ -36,7 +38,7 @@ const StoryblokPage = () => {
   }, []);
 
   if (!story || !story.content) {
-    return <div>Loading....</div>;
+    return <LoaderLayout />;
   }
   return <StoryblokComponent blok={story.content}></StoryblokComponent>;
 };

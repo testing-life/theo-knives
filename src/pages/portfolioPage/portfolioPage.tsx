@@ -1,11 +1,10 @@
-import { SbBlokData, useStoryblok } from '@storyblok/react';
+import { useStoryblok } from '@storyblok/react';
 import Footer from 'components/molecules/footer/footer';
 import MainNav from 'components/molecules/mainNav/MainNav';
 import Product from 'components/molecules/product/product';
 import Tabs from 'components/molecules/tabs/tabs';
 import { useEffect, useMemo, useState } from 'react';
 import './portfolioPage.css';
-import { toNoSpaceLowercase } from 'utils/string';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import {
   FilterLabelsDictionary,

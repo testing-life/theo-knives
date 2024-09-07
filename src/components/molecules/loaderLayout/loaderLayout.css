@@ -1,0 +1,14 @@
+.theo-loader-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+.theo-loader-layout__paragraph {
+  text-align: center;
+}
+
+.theo-loader-layout__paragraph:last-of-type {
+  margin-block-end: 6rem;
+}

@@ -1,4 +1,4 @@
-import Select from 'components/select/select';
+import Select from 'components/atoms/select/select';
 import {
   LanguageCode,
   LanguageDictionary,
