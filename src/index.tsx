@@ -20,8 +20,6 @@ import { BrowserRouter } from 'react-router-dom';
 import Paragraph from 'components/atoms/parapgraph/paragraph';
 import ErrorBoundary from 'pages/errorBoundary/errorBoundary';
 import Fallback from 'components/molecules/fallback/fallback';
-// import Grid from './components/Grid';
-// import Feature from './components/Feature';
 
 storyblokInit({
   accessToken: process.env.REACT_APP_STORYBLOK_TOKEN,

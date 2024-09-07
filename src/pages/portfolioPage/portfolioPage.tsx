@@ -3,21 +3,26 @@ import Footer from 'components/molecules/footer/footer';
 import MainNav from 'components/molecules/mainNav/MainNav';
 import Product from 'components/molecules/product/product';
 import Tabs from 'components/molecules/tabs/tabs';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import './portfolioPage.css';
-import { toNoSpaceLowercase } from 'utils/string';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { LanguageCode, useLanguage } from 'context/languageContext';
+import {
+  FilterLabelsDictionary,
+  LanguageCode,
+  useLanguage,
+} from 'context/languageContext';
+import { getComponent } from 'utils/blok';
+import { filterByTerm } from 'utils/filter';
 
 const PortfolioPage = () => {
   const [nav, setNav] = useState();
   const [tabs, setTabs] = useState();
-  const [filter, setFilter] = useState('all');
   const [products, setProducts] = useState<unknown[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<unknown[]>([]);
   const [param] = useSearchParams();
   const { language, setLanguage } = useLanguage();
   const { lang } = useParams();
+  const [filter, setFilter] = useState('');
   const navigate = useNavigate();
 
   const story = useStoryblok('/portfolio', {
@@ -25,45 +30,51 @@ const PortfolioPage = () => {
     language: lang,
   });
 
+  const mainNav = useMemo(
+    () => (story.content ? getComponent(story, 'main-nav') : null),
+    [story.content]
+  );
+  const productsList = useMemo(
+    () => (story.content ? getComponent(story, 'product', true) : null),
+    [story.content]
+  );
+  const tabsFilters = useMemo(
+    () => (story.content ? getComponent(story, 'tabs') : null),
+    [story.content]
+  );
+
   useEffect(() => {
     if (story.content) {
-      const portfolioContent = story.content.body;
-      const nav = portfolioContent?.filter(
-        (blok: any) => blok.component === 'main-nav'
-      )[0];
-      const products = portfolioContent?.filter(
-        (blok: any) => blok.component === 'product'
-      );
-      const tabs = portfolioContent?.filter(
-        (blok: any) => blok.component === 'tabs'
-      )[0];
-      if (nav) {
-        setNav(nav);
+      if (mainNav) {
+        setNav(mainNav);
       }
-      if (tabs) {
-        setTabs(tabs);
+      if (tabsFilters) {
+        setTabs(tabsFilters);
       }
-      if (products) {
-        setProducts(products);
-        setFilteredProducts(products);
+      if (productsList) {
+        setProducts(productsList);
+        setFilteredProducts(productsList);
       }
     }
-  }, [story.content]);
+  }, [tabsFilters, productsList, mainNav]);
 
   const filterProducts = (filter: string) => {
-    if (filter === 'all') {
+    if (
+      filter ===
+      FilterLabelsDictionary[
+        (lang as LanguageCode) || (language as LanguageCode)
+      ].all
+    ) {
       setFilteredProducts(products);
       return;
     }
 
-    const newData = products.filter((product: any) => {
-      if (
-        (filter === 'instock' && product.available) ||
-        toNoSpaceLowercase(product.model) === filter
-      ) {
-        return product;
-      }
-    });
+    const newData = filterByTerm(
+      products,
+      filter,
+      (lang as LanguageCode) || (language as LanguageCode)
+    );
+
     setFilteredProducts(newData);
   };
 
@@ -87,6 +98,16 @@ const PortfolioPage = () => {
     if (language && language !== lang) {
       navigate(`/${language}/portfolio`, { replace: true });
     }
+
+    if (!param.has('model')) {
+      if ((!filter && lang) || language) {
+        setFilter(
+          FilterLabelsDictionary[
+            (lang as LanguageCode) || (language as LanguageCode)
+          ].all
+        );
+      }
+    }
   }, [lang, language]);
 
   return (
@@ -97,13 +118,18 @@ const PortfolioPage = () => {
           {tabs && (
             <Tabs
               blok={tabs}
-              paramFilter={filter}
+              paramFilter={
+                filter ||
+                FilterLabelsDictionary[
+                  (lang as LanguageCode) || (language as LanguageCode)
+                ].all
+              }
               onSelect={(value) => setFilter(value)}
             />
           )}
           <ul>
             {filteredProducts.map((product) => (
-              <li className='-mb-1rem'>
+              <li key={(product as any)._uid} className='-mb-1rem'>
                 <Product blok={product} />
               </li>
             ))}
