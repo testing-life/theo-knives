@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "pull-sb-components": "storyblok pull-components --space 296183",
+    "generate-sb-types": "storyblok generate-typescript-typedefs --sourceFilePaths ./components.296183.json --destinationFilePath ./src/types/component-types-sb.d.ts"
   },
   "eslintConfig": {
     "extends": [

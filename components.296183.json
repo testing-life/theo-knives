@@ -1,0 +1,545 @@
+{
+  "components": [
+    {
+      "name": "button",
+      "display_name": null,
+      "created_at": "2024-08-03T19:58:27.550Z",
+      "updated_at": "2024-08-03T19:59:18.899Z",
+      "id": 6124688,
+      "schema": {
+        "fullWidth": {
+          "type": "boolean",
+          "pos": 0
+        },
+        "label": {
+          "type": "text",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "button",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "heading",
+      "display_name": null,
+      "created_at": "2024-08-03T18:59:39.734Z",
+      "updated_at": "2024-08-29T12:59:01.007Z",
+      "id": 6124590,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0,
+          "translatable": true,
+          "required": true
+        },
+        "renderAs": {
+          "type": "option",
+          "pos": 1,
+          "options": [
+            {
+              "_uid": "5f9d1cc1-a5f9-4d24-857e-f7e9a8e161b0",
+              "name": "Heading 1",
+              "value": "h1"
+            },
+            {
+              "_uid": "b2af50b6-14a8-4bbf-8ec2-e49001bd564e",
+              "value": "h2",
+              "name": "Heading 2"
+            }
+          ],
+          "use_uuid": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "heading",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "hero-banner",
+      "display_name": null,
+      "created_at": "2024-08-20T14:36:13.212Z",
+      "updated_at": "2024-09-01T06:57:34.962Z",
+      "id": 6189192,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "cta": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "link"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero-banner",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "icon-button",
+      "display_name": null,
+      "created_at": "2024-08-13T18:33:15.663Z",
+      "updated_at": "2024-08-13T18:33:15.663Z",
+      "id": 6164897,
+      "schema": {},
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "icon-button",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "link",
+      "display_name": null,
+      "created_at": "2024-08-13T11:56:38.439Z",
+      "updated_at": "2024-08-21T16:44:53.830Z",
+      "id": 6163251,
+      "schema": {
+        "label": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        },
+        "whereTo": {
+          "type": "multilink",
+          "pos": 1,
+          "required": true,
+          "show_anchor": true
+        },
+        "asButton": {
+          "type": "boolean",
+          "pos": 2
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "link",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "main-nav",
+      "display_name": null,
+      "created_at": "2024-08-13T13:32:42.158Z",
+      "updated_at": "2024-09-07T18:29:42.929Z",
+      "id": 6163872,
+      "schema": {
+        "logo": {
+          "type": "asset",
+          "pos": 0,
+          "required": true
+        },
+        "mobileLogo": {
+          "type": "asset",
+          "pos": 1,
+          "required": true
+        },
+        "links": {
+          "type": "bloks",
+          "pos": 2
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [
+        {
+          "id": 2264640,
+          "name": "withNav",
+          "component_id": 6163872,
+          "image": "",
+          "icon": "",
+          "color": "#fbce41",
+          "description": "navigation set up"
+        }
+      ],
+      "preset_id": null,
+      "real_name": "main-nav",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "model",
+      "display_name": null,
+      "created_at": "2024-08-19T09:19:33.650Z",
+      "updated_at": "2024-09-07T18:36:48.411Z",
+      "id": 6181164,
+      "schema": {
+        "image": {
+          "type": "asset",
+          "pos": 0,
+          "required": true
+        },
+        "name": {
+          "type": "option",
+          "pos": 1,
+          "required": true,
+          "translatable": true,
+          "use_uuid": true,
+          "display_name": "Model",
+          "options": [
+            {
+              "_uid": "9e3ce197-8ded-4a1d-a0ba-71b369c7f2b0",
+              "name": "Model 1",
+              "value": "Model 1"
+            },
+            {
+              "_uid": "360a1da1-8d3e-4874-905d-3d37ee2b66f4",
+              "value": "Model 2",
+              "name": "Model 2"
+            },
+            {
+              "_uid": "b071ce1e-8edf-464d-bc45-747078e468fb",
+              "value": "Model 3",
+              "name": "Model 3"
+            }
+          ],
+          "datasource_slug": "knife-models",
+          "source": "internal"
+        },
+        "description": {
+          "type": "text",
+          "pos": 2,
+          "required": true,
+          "translatable": true
+        },
+        "linkLabel": {
+          "type": "text",
+          "pos": 3,
+          "required": true,
+          "translatable": true
+        },
+        "cta": {
+          "type": "multilink",
+          "pos": 4,
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "model",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "models",
+      "display_name": null,
+      "created_at": "2024-08-19T09:21:15.017Z",
+      "updated_at": "2024-09-07T18:37:55.521Z",
+      "id": 6181196,
+      "schema": {
+        "models": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "model"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "models",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "page",
+      "display_name": null,
+      "created_at": "2024-07-07T19:23:42.805Z",
+      "updated_at": "2024-07-07T19:23:42.805Z",
+      "id": 6022150,
+      "schema": {
+        "body": {
+          "type": "bloks"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "page",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "paragraph",
+      "display_name": null,
+      "created_at": "2024-08-29T13:04:36.723Z",
+      "updated_at": "2024-08-29T13:40:38.732Z",
+      "id": 6227439,
+      "schema": {
+        "text": {
+          "type": "textarea",
+          "pos": 0,
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "paragraph",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "product",
+      "display_name": null,
+      "created_at": "2024-08-15T08:37:48.897Z",
+      "updated_at": "2024-08-26T17:17:56.170Z",
+      "id": 6169617,
+      "schema": {
+        "name": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true,
+          "display_name": "name"
+        },
+        "model": {
+          "type": "option",
+          "pos": 1,
+          "required": true,
+          "translatable": true,
+          "display_name": "model",
+          "options": [
+            {
+              "_uid": "b7f48571-2d68-469f-9e59-64a8c5126063",
+              "value": "",
+              "name": ""
+            }
+          ],
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "knife-models"
+        },
+        "description": {
+          "type": "textarea",
+          "pos": 2,
+          "translatable": true,
+          "required": true,
+          "description": "dewoijf iweojf oiwejfiowejfaewgf hwiehfdewoijf iweojf oiwejfiowejfaewgf hwiehfdewoijf iweojf oiwejfiowejfaewgf hwiehfdewoijf iweojf oiwejfiowejfaewgf hwiehf"
+        },
+        "images": {
+          "type": "multiasset",
+          "pos": 3,
+          "filetypes": [
+            "images"
+          ],
+          "asset_folder_id": null,
+          "required": true
+        },
+        "available": {
+          "type": "boolean",
+          "pos": 4,
+          "translatable": true,
+          "inline_label": true,
+          "default_value": false
+        },
+        "availableLabel": {
+          "type": "text",
+          "pos": 5,
+          "required": true,
+          "translatable": true,
+          "default_value": "Order"
+        },
+        "unavailableLabel": {
+          "type": "text",
+          "pos": 6,
+          "required": true,
+          "description": "",
+          "default_value": "Enquire",
+          "translatable": true
+        },
+        "tab-0ca91644-2215-4f7c-860b-0b6cda658773": {
+          "display_name": "codn",
+          "keys": [],
+          "pos": 7,
+          "type": "tab"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "product",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "tab",
+      "display_name": null,
+      "created_at": "2024-08-25T15:22:54.256Z",
+      "updated_at": "2024-08-29T07:17:34.306Z",
+      "id": 6206999,
+      "schema": {
+        "label": {
+          "type": "option",
+          "pos": 0,
+          "use_uuid": true,
+          "required": true,
+          "translatable": true,
+          "source": "internal",
+          "datasource_slug": "knife-models-tabs"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "tab",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    },
+    {
+      "name": "tabs",
+      "display_name": null,
+      "created_at": "2024-08-25T15:29:36.144Z",
+      "updated_at": "2024-08-25T15:30:11.650Z",
+      "id": 6207002,
+      "schema": {
+        "tabs": {
+          "type": "bloks",
+          "pos": 0,
+          "required": true,
+          "minimum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "tab"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "tabs",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
+    }
+  ],
+  "component_groups": []
+}

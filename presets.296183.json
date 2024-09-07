@@ -1,0 +1,107 @@
+{
+  "presets": [
+    {
+      "id": 2264640,
+      "name": "withNav",
+      "preset": {
+        "_uid": "b43cf5b5-ec67-4c16-845e-990d13588729",
+        "logo": {
+          "id": 17171870,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "messerchmeide logo",
+          "source": "",
+          "filename": "https://a.storyblok.com/f/296183/711x1037/e8acf854c1/print_w_frame_inverted.png",
+          "copyright": "",
+          "fieldtype": "asset",
+          "meta_data": {
+            "alt": "",
+            "title": "messerchmeide logo",
+            "source": "",
+            "copyright": ""
+          },
+          "content_type": "png",
+          "is_external_url": false
+        },
+        "links": [
+          {
+            "_uid": "11cfe77c-7223-4ab1-8f0e-0400fa75d66d",
+            "label": "Home",
+            "whereTo": {
+              "id": "4736094f-0f77-4074-a4bf-0107e54a97cf",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "home"
+            },
+            "asButton": false,
+            "component": "link"
+          },
+          {
+            "_uid": "37167945-1012-448b-851d-b55dada9099d",
+            "label": "Portfolio ",
+            "whereTo": {
+              "id": "c356fd43-b071-4b4f-8d47-933c8ab488ed",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "portfolio"
+            },
+            "component": "link"
+          },
+          {
+            "_uid": "6b7a3521-fb97-4f3c-8458-19c5d490262e",
+            "label": "Models",
+            "whereTo": {
+              "id": "70a08410-c8ab-4051-b11c-32cbda970bb3",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "models"
+            },
+            "asButton": false,
+            "component": "link",
+            "label__i18n__de": "Models"
+          },
+          {
+            "_uid": "194227f6-1646-42ec-893c-9ce9c240b467",
+            "label": "Contact / Orders",
+            "whereTo": {
+              "id": "1267c64e-1ee1-4e30-b3d2-6f6ce45c9f7e",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "contact"
+            },
+            "asButton": false,
+            "component": "link",
+            "label__i18n__de": "Kontakt / Bestellungen"
+          }
+        ],
+        "component": "main-nav",
+        "mobileLogo": {
+          "id": 17171905,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "source": "",
+          "filename": "https://a.storyblok.com/f/296183/503x763/6e88a3648f/print_wo_frame_inverted.png",
+          "copyright": "",
+          "fieldtype": "asset",
+          "meta_data": {},
+          "is_external_url": false
+        }
+      },
+      "component_id": 6163872,
+      "space_id": 296183,
+      "created_at": "2024-08-25T13:44:03.659Z",
+      "updated_at": "2024-08-29T19:11:47.642Z",
+      "image": "",
+      "color": "#fbce41",
+      "icon": "",
+      "description": "navigation set up"
+    }
+  ]
+}

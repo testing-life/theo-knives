@@ -2,9 +2,10 @@ import Tab from 'components/atoms/tab/tab';
 import React, { FC, useState } from 'react';
 import { storyblokEditable } from '@storyblok/react';
 import './tabs.css';
+import { TabsStoryblok } from 'types/component-types-sb';
 
 interface Props {
-  blok: any;
+  blok: TabsStoryblok;
   onSelect: (val: string) => void;
   paramFilter: string;
 }
