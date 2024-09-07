@@ -3,7 +3,7 @@ import Footer from 'components/molecules/footer/footer';
 import MainNav from 'components/molecules/mainNav/MainNav';
 import Product from 'components/molecules/product/product';
 import Tabs from 'components/molecules/tabs/tabs';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import './portfolioPage.css';
 import { toNoSpaceLowercase } from 'utils/string';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
@@ -31,23 +31,33 @@ const PortfolioPage = () => {
     language: lang,
   });
 
+  const mainNav = useMemo(
+    () => (story.content ? getComponent(story, 'main-nav') : null),
+    [story.content]
+  );
+  const productsList = useMemo(
+    () => (story.content ? getComponent(story, 'product', true) : null),
+    [story.content]
+  );
+  const tabsFilters = useMemo(
+    () => (story.content ? getComponent(story, 'tabs') : null),
+    [story.content]
+  );
+
   useEffect(() => {
     if (story.content) {
-      const nav = getComponent(story, 'main-nav');
-      const products = getComponent(story, 'product', true);
-      const tabs = getComponent(story, 'tabs');
-      if (nav) {
-        setNav(nav);
+      if (mainNav) {
+        setNav(mainNav);
       }
-      if (tabs) {
-        setTabs(tabs);
+      if (tabsFilters) {
+        setTabs(tabsFilters);
       }
-      if (products) {
-        setProducts(products);
-        setFilteredProducts(products);
+      if (productsList) {
+        setProducts(productsList);
+        setFilteredProducts(productsList);
       }
     }
-  }, [story.content]);
+  }, [tabsFilters, productsList, mainNav]);
 
   const filterProducts = (filter: string) => {
     if (
@@ -59,6 +69,7 @@ const PortfolioPage = () => {
       setFilteredProducts(products);
       return;
     }
+
     const newData = filterByTerm(
       products,
       filter,
@@ -89,12 +100,14 @@ const PortfolioPage = () => {
       navigate(`/${language}/portfolio`, { replace: true });
     }
 
-    if ((!filter && lang) || language) {
-      setFilter(
-        FilterLabelsDictionary[
-          (lang as LanguageCode) || (language as LanguageCode)
-        ].all
-      );
+    if (!param.has('model')) {
+      if ((!filter && lang) || language) {
+        setFilter(
+          FilterLabelsDictionary[
+            (lang as LanguageCode) || (language as LanguageCode)
+          ].all
+        );
+      }
     }
   }, [lang, language]);
 
