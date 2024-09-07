@@ -28,6 +28,8 @@
     rgba(var(--abiding-answer), 1) 80%,
     rgba(var(--abiding-answer), 0) 100%
   );
+  --loader-bg: rgba(var(--exquisite-eggplant), 1);
+  --loader-shadow: rgba(var(--exquisite-eggplant), 0.5);
 }
 
 html {

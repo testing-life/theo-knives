@@ -3,27 +3,27 @@
   height: 4.8px;
   display: inline-block;
   position: relative;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  background: var(--loader-bg);
+  box-shadow: 0 0 0.1rem var(--loader-shadow);
   box-sizing: border-box;
   animation: animFw 8s linear infinite;
 }
 .theo-loader::after,
 .theo-loader::before {
   content: '';
-  width: 10px;
-  height: 1px;
-  background: #fff;
+  width: 1rem;
+  height: 0.1rem;
+  background: var(--loader-bg);
   position: absolute;
-  top: 9px;
-  right: -2px;
+  top: 0.9rem;
+  right: -0.2rem;
   opacity: 0;
   transform: rotate(-45deg) translateX(0px);
   box-sizing: border-box;
   animation: coli1 0.3s linear infinite;
 }
 .theo-loader::before {
-  top: -4px;
+  top: -0.4rem;
   transform: rotate(45deg);
   animation: coli2 0.3s linear infinite;
 }
