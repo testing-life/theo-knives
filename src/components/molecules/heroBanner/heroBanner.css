@@ -44,12 +44,18 @@
   position: relative;
   inset-inline-start: 1rem;
   inset-inline-end: 1rem;
+  inline-size: 90%;
+}
+
+@media (width > 500px) {
+  .theo-hero .theo-button {
+    inline-size: auto;
+  }
 }
 
 @media (width > 700px) {
   .theo-hero .theo-button {
     position: absolute;
-    inline-size: auto;
     inset-block-end: 6rem;
     inset-inline-start: auto;
     inset-inline-end: auto;
@@ -67,6 +73,7 @@
 .theo-hero__figure .pure-img {
   object-fit: cover;
   height: 100%;
+  width: 100%;
 }
 
 @media (width > 700px) {
