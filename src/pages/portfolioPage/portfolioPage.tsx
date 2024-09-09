@@ -47,6 +47,8 @@ const PortfolioPage = () => {
   );
 
   useEffect(() => {
+    throw new Error('fallback tes');
+
     if (story.content) {
       if (mainNav) {
         setNav(mainNav);

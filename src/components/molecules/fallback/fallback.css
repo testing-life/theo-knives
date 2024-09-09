@@ -1,0 +1,14 @@
+.theo-fallback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  block-size: 100vh;
+  margin: 0;
+}
+
+.theo-fallback img {
+}
+
+.theo-fallback strong:not(:last-child) {
+  margin-block-end: 2rem;
+}
