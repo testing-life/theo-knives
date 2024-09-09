@@ -8,7 +8,7 @@ const Page = ({ blok }: PageStoryblok) => {
     <>
       <main className='theo-page' {...storyblokEditable(blok)}>
         {blok.body
-          ? blok.body.map((blok: any) => (
+          ? blok.body.map((blok: PageStoryblok) => (
               <StoryblokComponent blok={blok} key={blok._uid} />
             ))
           : null}

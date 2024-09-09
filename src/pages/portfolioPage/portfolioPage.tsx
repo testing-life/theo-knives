@@ -12,13 +12,16 @@ import {
   useLanguage,
 } from 'context/languageContext';
 import { getComponent } from 'utils/blok';
-import { filterByTerm } from 'utils/filter';
+import { filterProductsByTerm } from 'utils/filter';
+import { ProductStoryblok } from 'types/component-types-sb';
 
 const PortfolioPage = () => {
   const [nav, setNav] = useState();
   const [tabs, setTabs] = useState();
-  const [products, setProducts] = useState<unknown[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<unknown[]>([]);
+  const [products, setProducts] = useState<ProductStoryblok[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<ProductStoryblok[]>(
+    []
+  );
   const [param] = useSearchParams();
   const { language, setLanguage } = useLanguage();
   const { lang } = useParams();
@@ -69,7 +72,7 @@ const PortfolioPage = () => {
       return;
     }
 
-    const newData = filterByTerm(
+    const newData = filterProductsByTerm(
       products,
       filter,
       (lang as LanguageCode) || (language as LanguageCode)
@@ -129,7 +132,7 @@ const PortfolioPage = () => {
           )}
           <ul>
             {filteredProducts.map((product) => (
-              <li key={(product as any)._uid} className='-mb-1rem'>
+              <li key={(product as ProductStoryblok)._uid} className='-mb-1rem'>
                 <Product blok={product} />
               </li>
             ))}
