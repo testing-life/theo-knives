@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import { SbBlokData, storyblokEditable } from '@storyblok/react';
+import { storyblokEditable } from '@storyblok/react';
+import { HeadingStoryblok } from 'types/component-types-sb';
 
 interface Props {
-  blok: any;
+  blok: HeadingStoryblok;
 }
 
 enum Element {

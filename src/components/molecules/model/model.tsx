@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 import { storyblokEditable } from '@storyblok/react';
 import './model.css';
+import { ModelStoryblok } from 'types/component-types-sb';
 
 interface Props {
-  blok: any;
+  blok: ModelStoryblok;
 }
 
 const Model: FC<Props> = ({ blok }) => {

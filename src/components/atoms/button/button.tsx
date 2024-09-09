@@ -1,14 +1,15 @@
-import React, { FC } from "react";
-import { storyblokEditable } from "@storyblok/react";
-import "./button.css";
+import React, { FC } from 'react';
+import { storyblokEditable } from '@storyblok/react';
+import './button.css';
+import { ButtonStoryblok } from 'types/component-types-sb';
 
 interface Props {
-  blok: any;
+  blok: ButtonStoryblok;
 }
 
 const Button: FC<Props> = ({ blok }) => {
   return (
-    <button {...storyblokEditable(blok)} className="pure-button theo-button">
+    <button {...storyblokEditable(blok)} className='pure-button theo-button'>
       {blok.label}
     </button>
   );

@@ -2,9 +2,10 @@ import Tab from 'components/atoms/tab/tab';
 import React, { FC, useState } from 'react';
 import { storyblokEditable } from '@storyblok/react';
 import './tabs.css';
+import { TabsStoryblok, TabStoryblok } from 'types/component-types-sb';
 
 interface Props {
-  blok: any;
+  blok: TabsStoryblok;
   onSelect: (val: string) => void;
   paramFilter: string;
 }
@@ -22,7 +23,7 @@ const Tabs: FC<Props> = ({ blok, onSelect, paramFilter }) => {
 
   return (
     <ul className='theo-tabs' {...storyblokEditable(blok)}>
-      {blok.tabs?.map((tab: any) => (
+      {(blok.tabs as TabStoryblok[])?.map((tab: TabStoryblok) => (
         <li key={tab._uid} className=''>
           <Tab
             blok={tab}

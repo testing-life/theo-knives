@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 import { storyblokEditable } from '@storyblok/react';
 import './link.css';
+import { LinkStoryblok } from 'types/component-types-sb';
 
 interface Props {
-  blok: any;
+  blok: LinkStoryblok;
 }
 
 const Link: FC<Props> = ({ blok }) => {

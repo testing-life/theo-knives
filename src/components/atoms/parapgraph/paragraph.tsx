@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import { storyblokEditable } from '@storyblok/react';
+import { ParagraphStoryblok } from 'types/component-types-sb';
 
 interface Props {
-  blok: any;
+  blok: ParagraphStoryblok;
 }
 
 const Paragraph: FC<Props> = ({ blok }) => {

@@ -3,8 +3,10 @@ import { storyblokEditable } from '@storyblok/react';
 import Link from 'components/atoms/link/link';
 import Hero from 'assets/hero.webp';
 import './heroBanner.css';
+import { HeroBannerStoryblok } from 'types/component-types-sb';
+
 interface Props {
-  blok: any;
+  blok: HeroBannerStoryblok;
 }
 
 const HeroBanner: FC<Props> = ({ blok }) => {
@@ -14,7 +16,7 @@ const HeroBanner: FC<Props> = ({ blok }) => {
       <figure className='theo-hero__figure'>
         <img className='pure-img' src={Hero} alt='' />
       </figure>
-      <Link blok={blok.cta[0]} />
+      <Link blok={blok.cta?.[0]} />
     </div>
   );
 };

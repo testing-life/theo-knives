@@ -6,9 +6,10 @@ import { ReactComponent as Close } from 'assets/icons/X.svg';
 import './MainNav.css';
 import IconButton from 'components/atoms/iconButton/iconButton';
 import useBreakpoints from 'hooks/useBreakpoints';
+import { LinkStoryblok, MainNavStoryblok } from 'types/component-types-sb';
 
 interface Props {
-  blok: any;
+  blok: MainNavStoryblok;
 }
 
 const MainNav: FC<Props> = ({ blok }) => {
@@ -59,7 +60,7 @@ const MainNav: FC<Props> = ({ blok }) => {
           {...(!forTablet && { role: 'menu' })}
           className='pure-menu-list'
         >
-          {blok.links?.map((link: any) => (
+          {(blok.links as LinkStoryblok[])?.map((link: LinkStoryblok) => (
             <li key={link._uid} className='pure-menu-item'>
               <Link blok={link} />
             </li>

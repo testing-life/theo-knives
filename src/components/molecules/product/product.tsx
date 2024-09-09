@@ -2,9 +2,10 @@ import React, { FC } from 'react';
 import { storyblokEditable } from '@storyblok/react';
 import ProductGallery from '../productGallery/productGallery';
 import './product.css';
+import { ProductStoryblok } from 'types/component-types-sb';
 
 interface Props {
-  blok: any;
+  blok: ProductStoryblok;
 }
 
 const Product: FC<Props> = ({ blok }) => {
