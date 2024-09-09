@@ -19,7 +19,7 @@ export interface HeadingStoryblok {
 
 export interface HeroBannerStoryblok {
   heading: string;
-  cta?: LinkStoryblok[];
+  cta: LinkStoryblok[];
   component: "hero-banner";
   _uid: string;
   [k: string]: any;

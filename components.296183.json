@@ -81,7 +81,7 @@
       "name": "hero-banner",
       "display_name": null,
       "created_at": "2024-08-20T14:36:13.212Z",
-      "updated_at": "2024-09-01T06:57:34.962Z",
+      "updated_at": "2024-09-09T06:50:01.419Z",
       "id": 6189192,
       "schema": {
         "heading": {
@@ -97,7 +97,8 @@
           "restrict_components": true,
           "component_whitelist": [
             "link"
-          ]
+          ],
+          "required": true
         }
       },
       "image": null,
