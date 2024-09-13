@@ -37,6 +37,12 @@
   }
 }
 
+.theo-product-gallery__item .theo-icon-button {
+  position: absolute;
+  inset-block-start: 1rem;
+  inset-inline-end: 1rem;
+}
+
 .theo-product-gallery__image {
   inline-size: 100%;
 }

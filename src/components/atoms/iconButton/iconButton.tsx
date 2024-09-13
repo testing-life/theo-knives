@@ -14,6 +14,10 @@ interface Props {
   label?: string;
 }
 
+export interface KeyboardEventM {
+  key: string;
+}
+
 const IconButton: FC<Props> = ({
   clickHandler,
   children,

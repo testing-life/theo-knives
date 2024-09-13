@@ -17,6 +17,8 @@
   --disabled-btn-colour: rgba(var(--grave-grit), 1);
   --border-radius: 8px;
   --text-shadow: rgba(var(--abject-abbyss), 1);
+  --dialog-backdrop: rgba(var(--abject-abbyss), 0.75);
+  --dialog-bg: rgba(var(--butternut-squash), 1);
   --tab-accent: rgba(var(--june-bud), 1);
   --pill-bg: rgba(var(--june-bud), 1);
   --pill-colour: rgba(var(--crimson-croak), 1);
