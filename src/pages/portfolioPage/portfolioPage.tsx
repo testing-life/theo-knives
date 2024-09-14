@@ -14,6 +14,7 @@ import {
 import { getComponent } from 'utils/blok';
 import { filterProductsByTerm } from 'utils/filter';
 import { ProductStoryblok } from 'types/component-types-sb';
+import LoaderLayout from 'components/molecules/loaderLayout/loaderLayout';
 
 const PortfolioPage = () => {
   const [nav, setNav] = useState();
@@ -117,6 +118,7 @@ const PortfolioPage = () => {
     <>
       <main className='theo-page'>
         <section>
+          {!Object.keys(story).length && <LoaderLayout />}
           {nav && <MainNav blok={nav} />}
           {tabs && (
             <Tabs
