@@ -1,0 +1,15 @@
+.theo-dialog {
+  padding: 0.25rem;
+  background: var(--dialog-bg);
+  position: relative;
+}
+
+.theo-dialog::backdrop {
+  background-color: var(--dialog-backdrop);
+}
+
+.theo-dialog .theo-icon-button {
+  position: absolute;
+  inset-block-start: 1rem;
+  inset-inline-end: 1rem;
+}

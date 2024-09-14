@@ -5,7 +5,7 @@ import { ReactComponent as Fb } from 'assets/icons/Facebook.svg';
 import { ReactComponent as In } from 'assets/icons/Instagram.svg';
 import './footer.css';
 import Mascot from 'assets/mascot.png';
-import LanguageSwitcher from '../languageSwitcher/languageSwitcher';
+import LanguageSwitcher from 'components/molecules/languageSwitcher/languageSwitcher';
 
 const Footer = () => {
   return (
@@ -39,9 +39,6 @@ const Footer = () => {
             <LanguageSwitcher />
           </span>
           <div className='theo-footer__social'>
-            <IconButton asLink whereTo=''>
-              <Fb />
-            </IconButton>
             <IconButton asLink whereTo=''>
               <In />
             </IconButton>
