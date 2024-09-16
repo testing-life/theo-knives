@@ -30,7 +30,12 @@ const IconButton: FC<Props> = ({
   whereTo,
 }) => {
   return asLink ? (
-    <a href={whereTo} rel='noopener noreferer' className='theo-icon-button'>
+    <a
+      href={whereTo}
+      target='_blank'
+      rel='noopener noreferer'
+      className='theo-icon-button'
+    >
       {children}
     </a>
   ) : (
