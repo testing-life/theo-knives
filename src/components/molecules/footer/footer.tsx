@@ -15,31 +15,26 @@ const Footer = () => {
           <img className='pure-img theo-footer__img' src={Mascot} alt='' />
         </figure>
         <div className=''>
-          <span className='-pb-05rem'>John Doe - Custom Knife Maker</span>
-          <span className='-pb-05rem'>
-            123 Blade Street, 10115 Berlin, Germany
-          </span>
-          <span className='-pb-05rem'>
-            <Obfuscate tel='+49 30 1234567' />
-          </span>
+          <span className='-pb-05rem'>Dr. Theo Wernicke</span>
+          <span className='-pb-05rem'>Könneritzstr. 16</span>
+          <span className='-pb-05rem'>04229 Leipzig</span>
           <span className='-pb-05rem'>
             <Obfuscate
-              email='john.doe@knifemaker.com'
+              email='messerschmiede-wernicke@posteo.com'
               headers={{
-                subject: 'General Contact',
-                body: 'Down with the machines!',
+                subject: 'Allgemeine Anfrage / General Contact',
               }}
             />
           </span>
 
           <span className='-pb-05rem'>
-            &copy; Custom Knife Maker {new Date().getFullYear()}
+            &copy; Messerschmiede Wernicke {new Date().getFullYear()}
           </span>
           <span className='-pb-05rem'>
             <LanguageSwitcher />
           </span>
           <div className='theo-footer__social'>
-            <IconButton asLink whereTo=''>
+            <IconButton asLink whereTo='https://instagram.com/thwer.knives'>
               <In />
             </IconButton>
           </div>
