@@ -20,6 +20,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Paragraph from 'components/atoms/parapgraph/paragraph';
 import ErrorBoundary from 'pages/errorBoundary/errorBoundary';
 import Fallback from 'components/molecules/fallback/fallback';
+import RtfText from 'components/atoms/rtfText/rtfText';
 
 storyblokInit({
   accessToken: process.env.REACT_APP_STORYBLOK_TOKEN,
@@ -37,6 +38,7 @@ storyblokInit({
     'hero-banner': HeroBanner,
     models: ModelsList,
     heading: Heading,
+    'rtf-text': RtfText,
   },
 });
 
