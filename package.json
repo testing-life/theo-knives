@@ -1,6 +1,6 @@
 {
   "name": "theo-messers",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": true,
   "dependencies": {
     "@storyblok/react": "^4.3.2",
