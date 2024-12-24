@@ -1648,7 +1648,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storyblok/js@^3.1.1":
+"@storyblok/js@3.1.9":
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/@storyblok/js/-/js-3.1.9.tgz#01830a03814e053e65fccfa885f17fbcb16ab4f6"
   integrity sha512-N8QB/yn8wQxM+G9kV/RHTsynuTyaMNwiAI2KFiwuT9QPo+Zea4EmikNJY1KxrA1Q8G8YiZEm7OBp1B3QDycA6g==
@@ -1656,12 +1656,12 @@
     "@storyblok/richtext" "^3.0.0"
     storyblok-js-client "^6.10.3"
 
-"@storyblok/react@^3.0.10":
-  version "3.0.15"
-  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-3.0.15.tgz#83279596ce05319ae4d496d8471cfe593d679646"
-  integrity sha512-WCishIb8JUSoRQLX9vCtlfP3fr/4b2EOcAgR1OmewrO0QmRP6OU9ZUMEIbQjVvvFkQ68d4qoaeyyqINSdX75XQ==
+"@storyblok/react@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-4.3.2.tgz#858121bce6e7c3dd7e5db94e3495dc2a81527e2f"
+  integrity sha512-D4fyaJM3mgwbfSUJ5lQPaPC842EGx797fdqcnOPuX+/IWX0uiCp+C28GrGVc0JnZTG+gYpPS6TYaAMJl5ui1cA==
   dependencies:
-    "@storyblok/js" "^3.1.1"
+    "@storyblok/js" "3.1.9"
 
 "@storyblok/richtext@^3.0.0":
   version "3.0.2"
@@ -8629,9 +8629,9 @@ stop-iteration-iterator@^1.0.0:
     internal-slot "^1.1.0"
 
 storyblok-js-client@^6.10.3:
-  version "6.10.4"
-  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-6.10.4.tgz#aee85f4dfd00cbe406f9b7c5ee2f70917b2a951f"
-  integrity sha512-a0WSMOkraYbQHqBK2FPGMD7YJCwpjfPRE6QRfyXdRXBYu1G199Ydkc36BuzFcwJAv1HAbO1fOjfF9B/vJB/EpQ==
+  version "6.10.6"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-6.10.6.tgz#951bd131ae8db34e1b8e67e1ee41f2c5e0da5dbb"
+  integrity sha512-4n/n6tkLu3kmZwb2aSZgwqGta8DodbQbGjuclWY+A6xsmrVWrRBytUs+5lvJVTGkshLflVPhufeO4j/1zvVSPQ==
 
 string-length@^4.0.1:
   version "4.0.2"

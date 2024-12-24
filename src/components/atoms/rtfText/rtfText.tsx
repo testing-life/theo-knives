@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { storyblokEditable } from '@storyblok/react';
 import { ParagraphStoryblok } from 'types/component-types-sb';
+import { storyblokEditable, StoryblokRichText } from '@storyblok/react';
 
 interface Props {
   blok: ParagraphStoryblok;
@@ -8,9 +8,9 @@ interface Props {
 
 const RtfText: FC<Props> = ({ blok }) => {
   return (
-    <p className='theo-rtf-text' {...storyblokEditable(blok)}>
-      {blok.richText}
-    </p>
+    <div className='theo-rtf-text' {...storyblokEditable(blok)}>
+      <StoryblokRichText doc={blok.tnc.content} />
+    </div>
   );
 };
 
